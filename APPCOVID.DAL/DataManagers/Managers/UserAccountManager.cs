@@ -55,17 +55,18 @@ namespace APP27062020.DAL.DataManagers
             string prepareQuery = $@"select * from {DalCostants.TABLE_SCHEMA}.{DalCostants.USERACCOUNT_TABLE} where USERNAME='{userName}' and PASSWORD='{password}'";
             return _dataManager.GetData(prepareQuery).FirstOrDefault();
         }
-        public List<UserAccountDto> RetrievePwdbyUserName(string userName)
-        {
-            string prepareQuery = $@"select PASSWORD from {DalCostants.TABLE_SCHEMA}.{DalCostants.USERACCOUNT_TABLE} where PASSWORD='{userName}'";
-            return _dataManager.GetData(prepareQuery);
-        }
+       
+        //public List<UserAccountDto> RetrievePwdbyUserName(string userName)
+        //{
+        //    string prepareQuery = $@"select PASSWORD from {DalCostants.TABLE_SCHEMA}.{DalCostants.USERACCOUNT_TABLE} where PASSWORD='{userName}'";
+        //    return _dataManager.GetData(prepareQuery);
+        //}
 
-        public List<UserAccountDto> GetUserDetailsByUserName(string userName)
-        {
-            string prepareQuery = $@"select * from {DalCostants.TABLE_SCHEMA}.{DalCostants.USERACCOUNT_TABLE} where PASSWORD='{userName}'";
-            return _dataManager.GetData(prepareQuery);
-        }
+        //public List<UserAccountDto> GetUserDetailsByUserName(string userName)
+        //{
+        //    string prepareQuery = $@"select * from {DalCostants.TABLE_SCHEMA}.{DalCostants.USERACCOUNT_TABLE} where PASSWORD='{userName}'";
+        //    return _dataManager.GetData(prepareQuery);
+        //}
         //public bool SendMail()
         //{
 

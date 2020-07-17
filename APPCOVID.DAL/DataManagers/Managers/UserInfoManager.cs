@@ -49,11 +49,21 @@ namespace APP27062020.DAL.DataManagers
             return _dataManager.InsertData(prepareQuery);
         }
 
-        public List<UserInfoDto> CheckUserEmailExists(string email)
-        {
-            string prepareQuery = $@"select * from {DalCostants.TABLE_SCHEMA}.{DalCostants.USERINFO_TABLE} where EMAIL='" + email + "'";
-            return _dataManager.GetData(prepareQuery);
-        }
-
+        //public List<UserInfoDto> CheckUserEmailExists(string email)
+        //{
+        //    string prepareQuery = $@"select * from {DalCostants.TABLE_SCHEMA}.{DalCostants.USERINFO_TABLE} where EMAIL='" + email + "'";
+        //    return _dataManager.GetData(prepareQuery);
+        //}
+        //public bool UpdateUserInfo(UserInfoDto info)
+        //{
+        //    string prepareQuery = $@"update {DalCostants.TABLE_SCHEMA}.{DalCostants.USERINFO_TABLE}
+        //                            set DESCRIPTION='{info.DESCRIPTION}',
+        //                                SHORTDESCRIPTION='{info.SHORTDESCRIPTION}',
+        //                                IMAGEURL='{info.IMAGEURL}',
+        //                                PRODUCTURL='{info.PRODUCTURL}',
+        //                                STATUS='{info.STATUS}'
+        //                           where USERID=" + info.USERID + "";
+        //    return _dataManager.InsertData(prepareQuery);
+        //}
     }
 }

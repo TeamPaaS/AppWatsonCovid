@@ -33,82 +33,79 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-
-
-
-            @{ int roleId = ViewBag.roleId; }
+            @* @{ int roleId = ViewBag.roleId; }
             @if (roleId == 3)
-            {
-                <li class="nav-item active">
-                    <a class="nav-link" asp-controller="Home" asp-action="Index">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
+        {*@
+            <li class="nav-item active">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
 
-                <!-- Nav Item - Pages Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>Components </span>
-                    </a>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Test:</h6>
-                            <a class="collapse-item" asp-controller="Product" asp-action="Index">Take Online Test</a>
-                        </div>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Components </span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Products:</h6>
+                        <a class="collapse-item" asp-controller="Product" asp-action="Index"> View Products</a>
                     </div>
-                </li>
-            }
-            @if (roleId == 2)
+                </div>
+            </li>
+            @*}
+        @if (roleId == 2)*@
             {
-                <li class="nav-item active">
-                    <a class="nav-link" asp-controller="Home" asp-action="Index">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>Components </span>
-                    </a>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Products:</h6>
-                            <a class="collapse-item" asp-controller="Product" asp-action="Index">Manage Products</a>
-                            <h6 class="collapse-header">Transactions:</h6>
-                            <a class="collapse-item" asp-controller="Product" asp-action="Index">Manage Transaction</a>
-                        </div>
+            <li class="nav-item active">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Components </span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Products:</h6>
+                        <a class="collapse-item" asp-controller="Product" asp-action="Index">Manage Products</a>
+                        <h6 class="collapse-header">Transactions:</h6>
+                        <a class="collapse-item" asp-controller="Transaction" asp-action="Index">Manage Transaction</a>
                     </div>
-                </li>
-            }
-            @if (roleId == 1)
-            {
-                <li class="nav-item active">
-                    <a class="nav-link" asp-controller="Home" asp-action="Index">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                <!-- Nav Item - Utilities Collapse Menu -->
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>Utilities</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Managements:</h6>
-                            <a class="collapse-item" asp-action="ViewUser" asp-controller="Home">Manage Users</a>
-                            <a class="collapse-item" href="utilities-border.html">Manage Citizen</a>
-                            <a class="collapse-item" href="utilities-animation.html">Manage Transactions</a>
-                            <a class="collapse-item" href="utilities-other.html">Other</a>
-                        </div>
+                </div>
+            </li>
+            @*}
+        @if (roleId == 1)
+        {*@
+            <li class="nav-item active">
+                <a class="nav-link" asp-controller="Home" asp-action="Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Utilities</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Managements:</h6>
+                        <a class="collapse-item" asp-action="ViewUser" asp-controller="Home">Manage Users</a>
+                        <a class="collapse-item" href="utilities-border.html">Manage Citizen</a>
+                        <a class="collapse-item" asp-controller="Transaction" asp-action="Index">Manage Transactions</a>
+                        @*<a class="collapse-item" href="utilities-other.html">Other</a>*@
                     </div>
-                </li>
-            }
+                </div>
+            </li>
+            @*}*@
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -232,7 +229,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="col-md-12">
                         <!-- Content Row -->
                         @RenderBody()
                         <!-- End of Content Wrapper -->
@@ -241,7 +238,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Your Website 2020</span>
+                            <span>Copyright &copy; Covid PAAS Website 2020</span>
                         </div>
                     </div>
                 </footer>

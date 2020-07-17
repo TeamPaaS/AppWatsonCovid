@@ -19,10 +19,21 @@ namespace APPCOVID.BAL.Helpers
             List<ProductDto> products = _productManager.GetProductData();
             return viewMapper(products);
         }
+        public ProductViewModel GetAllById(int pid)
+        {
+            List<ProductDto> getProductInfo = _productManager.GetProductData();
+            ProductDto productDetails = getProductInfo.Where(t => t.PRODUCTID == pid).FirstOrDefault();
+            ProductViewModel productInfo = CommonHelper.ConvertTo<ProductViewModel>(productDetails);
+            return productInfo;
+        }
 
         public bool CreateProduct(ProductViewModel product)
         {
             return _productManager.CreateInsuranceProduct(product);
+        }
+        public bool UpdateProduct(ProductViewModel product)
+        {
+            return _productManager.UpdateInsuranceProduct(product);
         }
 
         public IList<ProductViewModel> viewMapper(List<ProductDto> products)

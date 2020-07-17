@@ -12,5 +12,6 @@ namespace APPCOVID.DAL.DataManagers.Helper
         public const string USERACCOUNT_TABLE = @"TBLUSERACCOUNT";
         public const string ROLE_TABLE = @"TBLROLE";
         public const string USERROLEMAP_TABLE = @"TBLUSERROLEMAP";
+        public const string TRANSACTION_TABLE = @"TBLTRANSACTION";
     }
 }

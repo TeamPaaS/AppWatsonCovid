@@ -1,5 +1,6 @@
 ﻿using APPCOVID.BAL.Helpers;
 using APPCOVID.Entity.ViewModels;
+using APPCOVID.Models.Session;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace APPCOVID.Controllers
         // GET: Product
         public ActionResult Index()
         {
+           // Authorize("customer");
             IList<ProductViewModel> prodList = new ProductHelper().GetAll();
             return View("~/Views/Products/Index.cshtml", prodList);
         }
@@ -18,13 +20,45 @@ namespace APPCOVID.Controllers
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            ProductViewModel prodModel = new ProductHelper().GetAllById(id);
+            return View("~/Views/Products/ViewDetails.cshtml", prodModel);
+        }
+        // GET: Product/Edit/5
+        public ActionResult Edit(int id)
+        {
+            ProductViewModel prodModel = new ProductHelper().GetAllById(id);
+            return View("~/Views/Products/Edit.cshtml", prodModel);
+        }
+
+        // POST: Product/Edit/5
+        [HttpPost]
+        public ActionResult Edit(ProductViewModel prodModel)
+        {
+            try
+            {
+                new ProductHelper().UpdateProduct(prodModel);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+                return View();
+            }
         }
 
         // GET: Product/Create
         public ActionResult Create()
         {
             return View("~/Views/Products/Create.cshtml");
+        }
+        // GET: Product/Buy
+        public ActionResult BuyProduct(int id)
+        {
+            ProductViewModel prodModel = new ProductHelper().GetAllById(id);
+            TransactionViewModel transModel = new TransactionViewModel();
+            transModel.PRODUCTID = id;
+            transModel.CUSTOMERID = prodModel.CUSTOMERID;
+            return View("~/Views/Transaction/Create.cshtml", transModel);
         }
 
         // POST: Product/Create
@@ -33,11 +67,15 @@ namespace APPCOVID.Controllers
         {
             try
             {
+                productInsurance.STATUS = "Active";
+                productInsurance.CUSTOMERID = Convert.ToInt32(HttpContext.Session.GetObject("coviduserid"));
+
                 new ProductHelper().CreateProduct(productInsurance);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
+                ex.Message.ToString();
                 return View();
             }
         }

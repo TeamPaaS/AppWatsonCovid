@@ -1,0 +1,73 @@
+﻿@model IEnumerable<APPCOVID.Entity.ViewModels.TransactionViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-responsive table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TRANSACTIONID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PRODUCTID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CUSTOMERID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SUBSCRIPTIONTYPE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PODETAILS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CREATEDDATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VALIDUPTODATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.STATUS)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TRANSACTIONID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRODUCTID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUSTOMERID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SUBSCRIPTIONTYPE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PODETAILS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CREATEDDATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALIDUPTODATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STATUS)
+            </td>
+            <td>
+                @Html.ActionLink("View", "Details", new {id=item.TRANSACTIONID}) @*|
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,75 @@
+﻿@model APPCOVID.Entity.ViewModels.ProductViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Product Details</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-controller="Product">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PRODUCTID" class="control-label"></label>
+                @Html.TextBoxFor(model => model.PRODUCTID, new { @class = "form-control", @readonly = "readonly" })
+                <span asp-validation-for="PRODUCTID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PRODUCTTYPE" class="control-label"></label>
+                @Html.TextBoxFor(model => model.PRODUCTTYPE, new { @class = "form-control", @readonly = "readonly" })
+                <span asp-validation-for="PRODUCTTYPE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CUSTOMERID" class="control-label"></label>
+                @Html.TextBoxFor(model => model.CUSTOMERID, new { @class = "form-control", @readonly = "readonly" })
+                <span asp-validation-for="CUSTOMERID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="STAGE" class="control-label"></label>
+                @Html.TextBoxFor(model => model.STAGE, new { @class = "form-control", @readonly = "readonly" })
+                <span asp-validation-for="STAGE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DESCRIPTION" class="control-label"></label>
+                @Html.TextBoxFor(model => model.DESCRIPTION, new { @class = "form-control" })
+                <span asp-validation-for="DESCRIPTION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SHORTDESCRIPTION" class="control-label"></label>
+                @Html.TextBoxFor(model => model.SHORTDESCRIPTION, new { @class = "form-control" })
+                <span asp-validation-for="SHORTDESCRIPTION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IMAGEURL" class="control-label"></label>
+                @Html.TextBoxFor(model => model.IMAGEURL, new { @class = "form-control" })
+                <span asp-validation-for="IMAGEURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PRODUCTURL" class="control-label"></label>
+                @Html.TextBoxFor(model => model.PRODUCTURL, new { @class = "form-control"})
+                <span asp-validation-for="PRODUCTURL" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="STATUS" class="control-label"></label>
+                @*@Html.TextBoxFor(model => model.STATUS, new { @class = "form-control" })*@
+                <select asp-for="STATUS" class="form-control">
+                    <option value="Active">Active</option>
+                    <option value="InActive">InActive</option>
+                </select>
+                <span asp-validation-for="STATUS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -87,7 +87,6 @@ namespace APPCOVID.Controllers
 
         public IActionResult Logout()
         {
-
             HttpContext.Session.Clear();
             return RedirectToActionPermanent("Index", "Account");
         }
