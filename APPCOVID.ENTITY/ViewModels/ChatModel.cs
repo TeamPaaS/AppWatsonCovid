@@ -9,5 +9,7 @@
     {
         public string Message { get; set; }
         public string SendBy { get; set; }
+        public int IsOption { get; set; }
+        public string QuestionNo { get; set; }
     }
 }

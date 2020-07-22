@@ -1,4 +1,5 @@
-﻿using APPCOVID.BAL.Helpers.Account;
+﻿using APPCOVID.BAL.Helpers;
+using APPCOVID.BAL.Helpers.Account;
 using APPCOVID.Controllers.Core;
 using APPCOVID.Entity.ViewModels;
 using APPCOVID.Models;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics;
+using System.Linq;
 
 namespace APPCOVID.Controllers
 {
@@ -23,7 +25,7 @@ namespace APPCOVID.Controllers
         public IActionResult Index()
         {
             Authorize();
-            
+            ViewBag.testResult = new ConversationHelper().GetConversationByParams(this.CurrentUserId, "OST").FirstOrDefault();
             return View();
         }
 

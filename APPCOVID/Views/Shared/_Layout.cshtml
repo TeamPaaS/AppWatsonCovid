@@ -33,9 +33,9 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            @* @{ int roleId = ViewBag.roleId; }
+             @{ int roleId = ViewBag.roleId; }
             @if (roleId == 3)
-        {*@
+        {
             <li class="nav-item active">
                 <a class="nav-link" asp-controller="Home" asp-action="Index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -52,12 +52,14 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Products:</h6>
+                        <a class="collapse-item" asp-controller="Chatbot" asp-action="ChatbotFaq"> Take Screening-Test</a>
+                        <h6 class="collapse-header">Products:</h6>
                         <a class="collapse-item" asp-controller="Product" asp-action="Index"> View Products</a>
                     </div>
                 </div>
             </li>
-            @*}
-        @if (roleId == 2)*@
+            }
+        @if (roleId == 2)
             {
             <li class="nav-item active">
                 <a class="nav-link" asp-controller="Home" asp-action="Index">
@@ -80,9 +82,9 @@
                     </div>
                 </div>
             </li>
-            @*}
+            }
         @if (roleId == 1)
-        {*@
+        {
             <li class="nav-item active">
                 <a class="nav-link" asp-controller="Home" asp-action="Index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -105,7 +107,7 @@
                     </div>
                 </div>
             </li>
-            @*}*@
+            }
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

@@ -14,7 +14,7 @@
 <div class="col-10 py-5 px-4" style="margin:0px auto">
     <!-- For demo purpose-->
     <header class="text-center">
-        <h1 class="display-4 text-black-50">COVID-19 FAQ</h1>
+        <h1 class="display-4 text-black-50">COVID-19 SCREENING TEST</h1>
     </header>
 
     <div class="row rounded-lg overflow-hidden shadow">
@@ -25,16 +25,7 @@
                 <p class="h5 mb-0 py-1">Ask Your Queries</p>
             </div>
             <div class="px-4 py-5 chat-box bg-white" id="chatContainer">
-                <!-- Sender Message-->
-                <div class="media mb-3">
-                    <div class="media-body mr-3">
-                        <div class="bg-light rounded py-2 px-3 mb-2">
-                            <p class="text-small mb-0 text-muted">Hi @ViewBag.fullName, how may I help you?</p>
-                        </div>
-                        <p class="small text-muted">@DateTime.Now.ToString("dd-MM-yyyy") | @DateTime.Now.ToString("hh:mm:ss")</p>
-                    </div>
-                    <img src="~/img/bot.jpg" alt="user" width="50" class="rounded-circle">
-                </div>
+                <!-- Sender Message-->                
             </div>
             <div id="loader" style="display:none; margin-bottom:5px;">
                 <div id="fountainG">
@@ -49,14 +40,14 @@
                 </div>
             </div>
             <!-- Typing area -->
-            <div class="bg-light">
+            @*<div class="bg-light">
                 <div class="input-group">
                     <input id="txtChatMsg" type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
                     <div class="input-group-append">
-                        <a href="javascript::void(0)" id="button-addon2" class="btn btn-link" onclick="AskChatbot('txtChatMsg','chatContainer','faq')"> <i class="fa fa-paper-plane"></i></a>
+                        <a href="javascript::void(0)" id="button-addon2" class="btn btn-link" onclick="ScreenTest('scrntst', false)"> <i class="fa fa-paper-plane"></i></a>
                     </div>
                 </div>
-            </div>
+            </div>*@
 
         </div>
     </div>
@@ -66,10 +57,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/CovidApp/Chatbot.js"></script>
     <script type="text/javascript">
-        $(document).on('keypress', function (e) {
-            if (e.which == 13) {
-                AskChatbot('txtChatMsg', 'chatContainer', 'faq');
-            }
+        $(document).ready(function () {
+            ScreenTest(true,0);
         });
+        //$(document).on('keypress', function (e) {
+        //    if (e.which == 13) {
+        //        ScreenTest('scrntst', false);
+        //    }
+        //});
     </script>
 }

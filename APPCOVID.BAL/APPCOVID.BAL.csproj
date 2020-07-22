@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IBM.Cloud.SDK.Core" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\APPCOVID.DAL\APPCOVID.DAL.csproj" />
     <ProjectReference Include="..\APPCOVID.ENTITY\APPCOVID.Entity.csproj" />
+    <ProjectReference Include="..\IBM.Watson.Assistant.v1\IBM.Watson.Assistant.v1.csproj" />
   </ItemGroup>
 
 </Project>

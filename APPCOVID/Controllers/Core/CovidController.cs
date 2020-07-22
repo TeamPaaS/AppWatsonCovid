@@ -9,6 +9,7 @@ namespace APPCOVID.Controllers.Core
     public class CovidController : Controller
     {
         public int RoleId { get; set; }
+        public int CurrentUserId { get; set; }
         public AccountHelper _accontHelper;
 
         public bool IsUserInAdminRole { get; set; }
@@ -25,6 +26,7 @@ namespace APPCOVID.Controllers.Core
             {
                 RedirectToActionPermanent("Logout", "Account");
             }
+            CurrentUserId = Convert.ToInt32(userId);
             int roleId = _accontHelper.GetRoleByUserid(Convert.ToInt32(userId));
             if (roleId < 1)
             {
@@ -46,6 +48,7 @@ namespace APPCOVID.Controllers.Core
             {
                 RedirectToActionPermanent("Logout", "Account");
             }
+            CurrentUserId = Convert.ToInt32(userId);
             int roleId = _accontHelper.GetRoleByUserid(Convert.ToInt32(userId));
             if (roleId < 1)
             {

@@ -1,4 +1,5 @@
 ﻿using APPCOVID.BAL.Helpers;
+using APPCOVID.Controllers.Core;
 using APPCOVID.Entity.ViewModels;
 using APPCOVID.Models.Session;
 using Microsoft.AspNetCore.Mvc;
@@ -7,12 +8,12 @@ using System.Collections.Generic;
 
 namespace APPCOVID.Controllers
 {
-    public class TransactionController:Controller
+    public class TransactionController: CovidController
     {
         // GET: Transaction
         public ActionResult Index()
         {
-            // Authorize("customer");
+            Authorize("customer");
             IList<TransactionViewModel> transList = new TransactionHelper().GetAll();
             return View("~/Views/Transaction/Index.cshtml", transList);
         }

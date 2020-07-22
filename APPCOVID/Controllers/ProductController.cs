@@ -1,4 +1,5 @@
 ﻿using APPCOVID.BAL.Helpers;
+using APPCOVID.Controllers.Core;
 using APPCOVID.Entity.ViewModels;
 using APPCOVID.Models.Session;
 using Microsoft.AspNetCore.Mvc;
@@ -7,12 +8,12 @@ using System.Collections.Generic;
 
 namespace APPCOVID.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : CovidController
     {
         // GET: Product
         public ActionResult Index()
         {
-           // Authorize("customer");
+            Authorize("customer");
             IList<ProductViewModel> prodList = new ProductHelper().GetAll();
             return View("~/Views/Products/Index.cshtml", prodList);
         }

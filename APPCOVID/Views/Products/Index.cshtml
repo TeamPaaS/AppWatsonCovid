@@ -7,32 +7,28 @@
         <table class="table table-responsive table-bordered">
             <thead>
                 <tr>
+                    
                     <th>
-                        @Html.DisplayNameFor(model => model.PRODUCTID)
+                        Type of Product
+                    </th>
+                    
+                    <th>
+                        Product for Infection-Stage
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.PRODUCTTYPE)
+                       About Product
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.CUSTOMERID)
+                       Product Short Description
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.STAGE)
+                       Product Pics
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.DESCRIPTION)
+                        Product Link
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.SHORTDESCRIPTION)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.IMAGEURL)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PRODUCTURL)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.STATUS)
+                        Product Status
                     </th>
                     <th></th>
                 </tr>
@@ -41,15 +37,11 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PRODUCTID)
-                        </td>
+                       
                         <td>
                             @Html.DisplayFor(modelItem => item.PRODUCTTYPE)
                         </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CUSTOMERID)
-                        </td>
+                       
                         <td>
                             @Html.DisplayFor(modelItem => item.STAGE)
                         </td>

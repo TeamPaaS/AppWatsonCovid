@@ -31,6 +31,10 @@ namespace APPCOVID.BAL
             citizen=3
         }
 
+        //public enum Disease { 
+        // q1= "dry cough or sore throat",
+
+        //}
       
     }
 }
