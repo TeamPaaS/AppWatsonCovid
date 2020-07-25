@@ -1,57 +1,60 @@
-﻿@model APPCOVID.Entity.DTO.ProductDto
+﻿
+@*@{int roleId = ViewBag.roleId;}
+@if (roleId != 3)*@
+    @model APPCOVID.Entity.DTO.ProductDto
 
 
 <h4>Create Product</h4>
 <hr />
 @*<div class="row">*@
-    <div class="col-md-4">
-        <form asp-action="Create" asp-controller="Product">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<div class="form-group">
-            <label asp-for="PRODUCTID" class="control-label"></label>
-            <input asp-for="PRODUCTID" class="form-control" />
-            <span asp-validation-for="PRODUCTID" class="text-danger"></span>
+<div class="col-md-4">
+    <form asp-action="Create" asp-controller="Product">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*<div class="form-group">
+                <label asp-for="PRODUCTID" class="control-label"></label>
+                <input asp-for="PRODUCTID" class="form-control" />
+                <span asp-validation-for="PRODUCTID" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                    <label asp-for="NAME" class="control-label"></label>
+                    <input asp-for="NAME" class="form-control" />
+                    <span asp-validation-for="NAME" class="text-danger"></span>
+                </div>*@
+        <div class="form-group">
+            <label asp-for="PRODUCTTYPE" class="control-label">Product Type</label>
+            <select asp-for="PRODUCTTYPE" class="form-control">
+                <option value="HealthCare">HealthCare</option>
+                <option value="Insurance">Insurance</option>
+            </select>
+            <span asp-validation-for="PRODUCTTYPE" class="text-danger"></span>
         </div>
-            <div class="form-group">
-                <label asp-for="NAME" class="control-label"></label>
-                <input asp-for="NAME" class="form-control" />
-                <span asp-validation-for="NAME" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
-                <label asp-for="PRODUCTTYPE" class="control-label"></label>
-                <select asp-for="PRODUCTTYPE" class="form-control">
-                    <option value="HealthCare">HealthCare</option>
-                    <option value="Insurance">Insurance</option>
-                </select> 
-                <span asp-validation-for="PRODUCTTYPE" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SHORTDESCRIPTION" class="control-label"></label>
-                <input asp-for="SHORTDESCRIPTION" class="form-control" />
-                <span asp-validation-for="SHORTDESCRIPTION" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DESCRIPTION" class="control-label"></label>
-                <input asp-for="DESCRIPTION" class="form-control" />
-                <span asp-validation-for="DESCRIPTION" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="STAGE" class="control-label"></label>
-                <input asp-for="STAGE" class="form-control" />
-                <span asp-validation-for="STAGE" class="text-danger"></span>
-            </div>
+        <div class="form-group">
+            <label asp-for="SHORTDESCRIPTION" class="control-label">Short Description</label>
+            <input asp-for="SHORTDESCRIPTION" class="form-control" />
+            <span asp-validation-for="SHORTDESCRIPTION" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DESCRIPTION" class="control-label">Decription</label>
+            <input asp-for="DESCRIPTION" class="form-control" />
+            <span asp-validation-for="DESCRIPTION" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="STAGE" class="control-label">Infection Stage</label>
+            <input asp-for="STAGE" class="form-control" />
+            <span asp-validation-for="STAGE" class="text-danger"></span>
+        </div>
 
-            <div class="form-group">
-                <label asp-for="PRODUCTURL" class="control-label"></label>
-                <input asp-for="PRODUCTURL" class="form-control" />
-                <span asp-validation-for="PRODUCTURL" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IMAGEURL" class="control-label"></label>
-                <input asp-for="IMAGEURL" class="form-control" />
-                <span asp-validation-for="IMAGEURL" class="text-danger"></span>
-            </div>
-            @*<div class="form-group">
+        <div class="form-group">
+            <label asp-for="PRODUCTURL" class="control-label">Product Url</label>
+            <input asp-for="PRODUCTURL" class="form-control" />
+            <span asp-validation-for="PRODUCTURL" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IMAGEURL" class="control-label">ImageL</label>
+            <input asp-for="IMAGEURL" class="form-control" />
+            <span asp-validation-for="IMAGEURL" class="text-danger"></span>
+        </div>
+        @*<div class="form-group">
                 <label asp-for="MEMBERSHIPPLAN" class="control-label"></label>
                 <input asp-for="MEMBERSHIPPLAN" class="form-control" />
                 <span asp-validation-for="MEMBERSHIPPLAN" class="text-danger"></span>
@@ -61,11 +64,11 @@
                 <input asp-for="USERID" class="form-control" />
                 <span asp-validation-for="USERID" class="text-danger"></span>
             </div>*@
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
 @*</div>*@
 
 <div>

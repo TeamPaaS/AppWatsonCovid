@@ -21,12 +21,14 @@ namespace APPCOVID.Controllers
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
+            Authorize();            
             ProductViewModel prodModel = new ProductHelper().GetAllById(id);
             return View("~/Views/Products/ViewDetails.cshtml", prodModel);
         }
         // GET: Product/Edit/5
         public ActionResult Edit(int id)
         {
+            Authorize();
             ProductViewModel prodModel = new ProductHelper().GetAllById(id);
             return View("~/Views/Products/Edit.cshtml", prodModel);
         }
@@ -50,11 +52,13 @@ namespace APPCOVID.Controllers
         // GET: Product/Create
         public ActionResult Create()
         {
+            Authorize("customer");
             return View("~/Views/Products/Create.cshtml");
         }
         // GET: Product/Buy
         public ActionResult BuyProduct(int id)
         {
+            Authorize("citizen");
             ProductViewModel prodModel = new ProductHelper().GetAllById(id);
             TransactionViewModel transModel = new TransactionViewModel();
             transModel.PRODUCTID = id;

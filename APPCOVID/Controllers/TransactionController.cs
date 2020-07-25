@@ -13,15 +13,25 @@ namespace APPCOVID.Controllers
         // GET: Transaction
         public ActionResult Index()
         {
-            Authorize("customer");
+            Authorize("citizen");
             IList<TransactionViewModel> transList = new TransactionHelper().GetAll();
             return View("~/Views/Transaction/Index.cshtml", transList);
         }
         // GET: Transaction/Details/5
         public ActionResult Details(int id)
         {
+            Authorize("citizen");
             TransactionViewModel transModel = new TransactionHelper().GetAllById(id);
             return View("~/Views/Transaction/ViewDetails.cshtml", transModel);
+        }
+
+        // GET: Transaction/Details/5
+        public ActionResult SubscriptionDetails()
+        {
+            Authorize("citizen");
+            string userId = HttpContext.Session.GetObject("coviduserid");
+            IList<TransactionViewModel> transList = new TransactionHelper().GetAllByUserId(Convert.ToInt32(userId));
+            return View("~/Views/Transaction/Subscription.cshtml", transList);
         }
         // GET: Transaction/Edit/5
         public ActionResult Edit(int id)
@@ -48,6 +58,7 @@ namespace APPCOVID.Controllers
         // GET: Transaction/Create
         public ActionResult Create()
         {
+            Authorize("citizen");
             return View("~/Views/Transaction/Create.cshtml");
         }
 
@@ -57,6 +68,8 @@ namespace APPCOVID.Controllers
         {
             try
             {
+                string userId = HttpContext.Session.GetObject("coviduserid");
+
                 if (transaction.SUBSCRIPTIONTYPE=="Monthly")
                 {
                     transaction.VALIDUPTODATE = DateTime.Now.AddMonths(1).ToString("ddMMyyyyhhmmtt");
@@ -73,13 +86,14 @@ namespace APPCOVID.Controllers
                 {
                     transaction.VALIDUPTODATE = "-------";
                 }
-                transaction.PODETAILS="ID23738432477";
+                //transaction.PODETAILS="ID23738432477";
+                transaction.CUSTOMERID = Convert.ToInt32(userId);
                 transaction.CREATEDDATE = DateTime.Now.ToString("ddMMyyyyhhmmtt");                
-                transaction.STATUS = "Discard";
+                transaction.STATUS = "Success";
 
 
                 new TransactionHelper().CreateTransaction(transaction);
-                return View("~/Views/Transaction/Index.cshtml");
+                return RedirectToAction(nameof(SubscriptionDetails));
             }
             catch (Exception ex)
             {

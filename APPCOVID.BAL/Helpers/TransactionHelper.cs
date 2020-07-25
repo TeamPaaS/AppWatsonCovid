@@ -26,6 +26,13 @@ namespace APPCOVID.BAL.Helpers
             TransactionViewModel transactionInfo = CommonHelper.ConvertTo<TransactionViewModel>(transactionDetails);
             return transactionInfo;
         }
+        public IList<TransactionViewModel> GetAllByUserId(int uid)
+        {
+            List<TransactionDto> getTransactionInfo = _transactionManager.GetTransactionData();
+           List <TransactionDto> transactionDetails = getTransactionInfo.Where(t => t.CUSTOMERID == uid).ToList();
+           // TransactionViewModel transactionInfo = CommonHelper.ConvertTo<TransactionViewModel>(transactionDetails);
+            return viewMapper(transactionDetails);
+        }
 
         public bool CreateTransaction(TransactionViewModel transaction)
         {
