@@ -62,8 +62,8 @@
                         </td>
 
                         <td>
-                            @Html.ActionLink("View", "Details", new { id = item.PRODUCTID })
-                            @if (roleId == 3)
+                            @Html.ActionLink("View", "Details", new { id = item.PRODUCTID }) 
+                            @if (roleId == 2)
                                 @Html.ActionLink("Buy", "BuyProduct", new{ id = item.PRODUCTID })
                             @* @Html.ActionLink("Edit", "Edit", new { id = item.PRODUCTID}) |
         @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@

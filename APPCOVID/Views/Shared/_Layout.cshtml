@@ -55,7 +55,7 @@
                         <a class="collapse-item" asp-controller="Chatbot" asp-action="ChatbotFaq"> Take Screening-Test</a>
                         <h6 class="collapse-header">Products:</h6>
                         <a class="collapse-item" asp-controller="Product" asp-action="Index"> View Products</a>
-                        <a class="collapse-item" asp-controller="Transaction" asp-action="SubscriptionDetails"> Active Subscription</a>
+                       
                     </div>
                 </div>
             </li>
@@ -79,7 +79,8 @@
                         <h6 class="collapse-header">Products:</h6>
                         <a class="collapse-item" asp-controller="Product" asp-action="Index">Manage Products</a>
                         <h6 class="collapse-header">Transactions:</h6>
-                        <a class="collapse-item" asp-controller="Transaction" asp-action="Index">Manage Transaction</a>
+                        <a class="collapse-item" asp-controller="Transaction" asp-action="SubscriptionDetails"> Active Subscription</a>
+                        @*<a class="collapse-item" asp-controller="Transaction" asp-action="Index">Manage Transaction</a>*@
                     </div>
                 </div>
             </li>
@@ -101,7 +102,7 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Managements:</h6>
-                        <a class="collapse-item" asp-action="ViewUser" asp-controller="Home">Manage Users</a>
+                        <a class="collapse-item" asp-controller="Product" asp-action="Index">Manage Products</a>
                         <a class="collapse-item" href="utilities-border.html">Manage Citizen</a>
                         <a class="collapse-item" asp-controller="Transaction" asp-action="Index">Manage Transactions</a>
                         @*<a class="collapse-item" href="utilities-other.html">Other</a>*@
@@ -166,8 +167,12 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">@ViewBag.pageHeader</h1>
-                        <a asp-controller="Chatbot" asp-action="ChatbotFaq" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-comments fa-sm text-white-50"></i> Ask Covid FAQ</a>
-                    </div>
+                        <div class="col-sm-6" >
+                            <a asp-controller="Chatbot" asp-action="ChatbotFaq" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-comments fa-sm text-white-50"></i> Ask Covid FAQ</a>
+                            <a asp-controller="Chatbot" asp-action="MedicalChatbot" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-comments fa-sm text-white-50"></i> Medical Assistant</a>
+                            <a asp-controller="Chatbot" asp-action="ChatbotFaq" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-comments fa-sm text-white-50"></i> Insurance Assistant</a>
+                        </div>
+                        </div>
 
                     <!-- Content Row -->
                     <div class="row">

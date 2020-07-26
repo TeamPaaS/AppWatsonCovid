@@ -58,7 +58,7 @@ namespace APPCOVID.Controllers
         // GET: Product/Buy
         public ActionResult BuyProduct(int id)
         {
-            Authorize("citizen");
+            Authorize("customer");
             ProductViewModel prodModel = new ProductHelper().GetAllById(id);
             TransactionViewModel transModel = new TransactionViewModel();
             transModel.PRODUCTID = id;

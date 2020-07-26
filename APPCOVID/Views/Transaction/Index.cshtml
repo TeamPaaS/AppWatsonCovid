@@ -15,10 +15,19 @@
                 Product Id
             </th>
             <th>
+                Customer Id
+            </th>
+            <th>
+                Pay Order Details
+            </th>
+            <th>
                 Created TimeStamp
             </th>
             <th>
                 Valid Upto TimeStamp
+            </th>
+            <th>
+                Status
             </th>
             <th></th>
         </tr>
@@ -26,27 +35,35 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-               
-                <td>
-                    @Html.DisplayFor(modelItem => item.SUBSCRIPTIONTYPE)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PODETAILS)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CREATEDDATE)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VALIDUPTODATE)
-                </td>
-               
-                <td>
-                    @Html.ActionLink("View", "Details", new { id = item.TRANSACTIONID }) @*|
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-                </td>
-            </tr>
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.SUBSCRIPTIONTYPE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRODUCTID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CUSTOMERID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PODETAILS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CREATEDDATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VALIDUPTODATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STATUS)
+            </td>
+            <td>
+                @Html.ActionLink("View", "Details", new { id = item.TRANSACTIONID }) @*|
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
         }
     </tbody>
 </table>

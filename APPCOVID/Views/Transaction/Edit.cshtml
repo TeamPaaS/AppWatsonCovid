@@ -11,44 +11,48 @@
         <form asp-action="Edit" asp-controller="Transaction">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="TRANSACTIONID" class="control-label"></label>
+                <label asp-for="TRANSACTIONID" class="control-label">Transaction Id</label>
                 @Html.TextBoxFor(model => model.TRANSACTIONID, new { @class = "form-control", @readonly = "readonly" })
                 <span asp-validation-for="TRANSACTIONID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PRODUCTID" class="control-label"></label>
+                <label asp-for="PRODUCTID" class="control-label">Product Id</label>
                 @Html.TextBoxFor(model => model.PRODUCTID, new { @class = "form-control", @readonly = "readonly" })
                 <span asp-validation-for="PRODUCTID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CUSTOMERID" class="control-label"></label>
+                <label asp-for="CUSTOMERID" class="control-label">Customer Id</label>
                 @Html.TextBoxFor(model => model.PRODUCTID, new { @class = "form-control", @readonly = "readonly" })
                 <span asp-validation-for="CUSTOMERID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SUBSCRIPTIONTYPE" class="control-label"></label>
+                <label asp-for="SUBSCRIPTIONTYPE" class="control-label">Subscription Type</label>
                 @*<input asp-for="SUBSCRIPTIONTYPE" class="form-control" />*@
                 @Html.TextBoxFor(model => model.SUBSCRIPTIONTYPE, new { @class = "form-control", @readonly = "readonly" })
                 <span asp-validation-for="SUBSCRIPTIONTYPE" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PODETAILS" class="control-label"></label>
+                <label asp-for="PODETAILS" class="control-label">Pay Order Details</label>
                 @Html.TextBoxFor(model => model.PODETAILS, new { @class = "form-control", @readonly = "readonly" })
                 <span asp-validation-for="PODETAILS" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CREATEDDATE" class="control-label"></label>
+                <label asp-for="CREATEDDATE" class="control-label">Created Date</label>
                 @Html.TextBoxFor(model => model.CREATEDDATE, new { @class = "form-control", @readonly = "readonly" })
                 <span asp-validation-for="CREATEDDATE" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="VALIDUPTODATE" class="control-label"></label>
+                <label asp-for="VALIDUPTODATE" class="control-label">Valid Upto Date</label>
                 @Html.TextBoxFor(model => model.VALIDUPTODATE, new { @class = "form-control" })
                 <span asp-validation-for="VALIDUPTODATE" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="STATUS" class="control-label"></label>
-                @Html.TextBoxFor(model => model.STATUS, new { @class = "form-control"})
+                <label asp-for="STATUS" class="control-label">Subscription Status</label>
+                @*@Html.TextBoxFor(model => model.STATUS, new { @class = "form-control"})*@
+                <select asp-for="STATUS" class="form-control">
+                    <option value="Active">Active</option>
+                    <option value="InActive">InActive</option>
+                </select>
                 <span asp-validation-for="STATUS" class="text-danger"></span>
             </div>
             <div class="form-group">

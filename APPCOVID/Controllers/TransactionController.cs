@@ -36,6 +36,7 @@ namespace APPCOVID.Controllers
         // GET: Transaction/Edit/5
         public ActionResult Edit(int id)
         {
+            Authorize();
             TransactionViewModel transModel = new TransactionHelper().GetAllById(id);
             return View("~/Views/Transaction/Edit.cshtml", transModel);
         }
@@ -89,7 +90,7 @@ namespace APPCOVID.Controllers
                 //transaction.PODETAILS="ID23738432477";
                 transaction.CUSTOMERID = Convert.ToInt32(userId);
                 transaction.CREATEDDATE = DateTime.Now.ToString("ddMMyyyyhhmmtt");                
-                transaction.STATUS = "Success";
+                transaction.STATUS = "InActive";
 
 
                 new TransactionHelper().CreateTransaction(transaction);
