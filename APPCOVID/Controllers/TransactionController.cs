@@ -13,14 +13,14 @@ namespace APPCOVID.Controllers
         // GET: Transaction
         public ActionResult Index()
         {
-            Authorize("citizen");
+            Authorize();
             IList<TransactionViewModel> transList = new TransactionHelper().GetAll();
             return View("~/Views/Transaction/Index.cshtml", transList);
         }
         // GET: Transaction/Details/5
         public ActionResult Details(int id)
         {
-            Authorize("citizen");
+            Authorize("customer");
             TransactionViewModel transModel = new TransactionHelper().GetAllById(id);
             return View("~/Views/Transaction/ViewDetails.cshtml", transModel);
         }
@@ -28,7 +28,7 @@ namespace APPCOVID.Controllers
         // GET: Transaction/Details/5
         public ActionResult SubscriptionDetails()
         {
-            Authorize("citizen");
+            Authorize("customer");
             string userId = HttpContext.Session.GetObject("coviduserid");
             IList<TransactionViewModel> transList = new TransactionHelper().GetAllByUserId(Convert.ToInt32(userId));
             return View("~/Views/Transaction/Subscription.cshtml", transList);
@@ -73,15 +73,15 @@ namespace APPCOVID.Controllers
 
                 if (transaction.SUBSCRIPTIONTYPE=="Monthly")
                 {
-                    transaction.VALIDUPTODATE = DateTime.Now.AddMonths(1).ToString("ddMMyyyyhhmmtt");
+                    transaction.VALIDUPTODATE = DateTime.Now.AddMonths(1).ToString("dd-MM-yyyy hh:mm:tt");
                 }
                 else if (transaction.SUBSCRIPTIONTYPE == "Quarterly")
                 {
-                    transaction.VALIDUPTODATE = DateTime.Now.AddMonths(4).ToString("ddMMyyyyhhmmtt");
+                    transaction.VALIDUPTODATE = DateTime.Now.AddMonths(4).ToString("dd-MM-yyyy hh:mm:tt");
                 }
                 else if (transaction.SUBSCRIPTIONTYPE == "Yearly")
                 {
-                    transaction.VALIDUPTODATE = DateTime.Now.AddYears(1).ToString("ddMMyyyyhhmmtt");
+                    transaction.VALIDUPTODATE = DateTime.Now.AddYears(1).ToString("dd-MM-yyyy hh:mm:tt");
                 }
                 else
                 {
@@ -89,7 +89,7 @@ namespace APPCOVID.Controllers
                 }
                 //transaction.PODETAILS="ID23738432477";
                 transaction.CUSTOMERID = Convert.ToInt32(userId);
-                transaction.CREATEDDATE = DateTime.Now.ToString("ddMMyyyyhhmmtt");                
+                transaction.CREATEDDATE = DateTime.Now.ToString("dd-MM-yyyy hh:mm:tt");                
                 transaction.STATUS = "InActive";
 
 

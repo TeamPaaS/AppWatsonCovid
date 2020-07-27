@@ -50,7 +50,7 @@ namespace APPCOVID.Controllers
                         USERID = CurrentUserId,
                         MESSAGE = testHist
                     });
-                    return createStatus ? RedirectToActionPermanent("Index", "Home") : RedirectToActionPermanent("ChatbotFaq", "Chatbot");
+                    return createStatus ? Ok("100"):Ok("999");
                 }
             }
             #endregion
@@ -141,6 +141,6 @@ namespace APPCOVID.Controllers
         //    return Index(chatViewModel);
         //}
 
-
+        
     }
 }

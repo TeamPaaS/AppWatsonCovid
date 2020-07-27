@@ -1,7 +1,6 @@
-﻿
-@*@{int roleId = ViewBag.roleId;}
-@if (roleId != 3)*@
-    @model APPCOVID.Entity.DTO.ProductDto
+﻿@*@{int roleId = ViewBag.roleId;}
+    @if (roleId != 3)*@
+@model APPCOVID.Entity.DTO.ProductDto
 
 
 <h4>Create Product</h4>
@@ -29,13 +28,13 @@
             <span asp-validation-for="PRODUCTTYPE" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="SHORTDESCRIPTION" class="control-label">Short Description</label>
+            <label asp-for="SHORTDESCRIPTION" class="control-label">Product Name</label>
             <input asp-for="SHORTDESCRIPTION" class="form-control" />
             <span asp-validation-for="SHORTDESCRIPTION" class="text-danger"></span>
         </div>
         <div class="form-group">
-            <label asp-for="DESCRIPTION" class="control-label">Decription</label>
-            <input asp-for="DESCRIPTION" class="form-control" />
+            <label asp-for="DESCRIPTION" class="control-label">Description</label>
+            <textarea asp-for="DESCRIPTION" maxlength="500" class="form-control"></textarea>
             <span asp-validation-for="DESCRIPTION" class="text-danger"></span>
         </div>
         <div class="form-group">
@@ -74,4 +73,5 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>

@@ -17,7 +17,7 @@ namespace APPCOVID.Controllers
             RegisterViewModel registerViewModel = new RegisterViewModel();
             registerViewModel.UserAccount = new UserAccountModel
             {
-                LASTLOGINDATE = DateTime.Now.ToString("ddMMyyyyhhmmtt"),
+                LASTLOGINDATE = DateTime.Now.ToString("dd-MM-yyyy hh:mm:tt"),
                 PASSWORD = "p@a$#Hackath0n",
                 USERNAME = "paas@superadmin.com",
                 ACTIVATEAC = 1
@@ -74,7 +74,7 @@ namespace APPCOVID.Controllers
             RegisterViewModel registerViewModel = new RegisterViewModel();
             registerViewModel.UserAccount = new UserAccountModel
             {
-                LASTLOGINDATE = DateTime.Now.ToString("ddMMyyyyhhmmtt"),
+                LASTLOGINDATE = DateTime.Now.ToString("dd-MM-yyyy hh:mm:tt"),
                 PASSWORD = register.Password,
                 USERNAME = register.Email,
                 ACTIVATEAC = 1

@@ -39,20 +39,29 @@ function ScreenTest(initType, val) {
 
 function CallService(settings, container) {
     $.ajax(settings).done(function (response) {
-        if (response !== null && response !== undefined && response.chatHistory.length > 0) {
-            $("#loader").css('display', 'none');
-            $.each(response.chatHistory, function (indx, valu) {
-                //if (valu.sendBy === "user") {
-                //    container = container + prepareUserChatTemplate(valu.message);                   
-                //}
-                if (valu.sendBy === "bot") {
-                    container = container + prepareBotChatTemplate(valu.message, valu.isOption);
-                    window.currentQ = valu.questionNo
+        if (response !== null && response !== undefined) {
+            if (response == "100") {
+                jQuery("#showTestCompleteBtn").css("display", "block");
+            } else {
+                //window.location = window.location.href;
+                if (response.chatHistory!=null && response.chatHistory.length > 0) {
+                    $("#loader").css('display', 'none');
+                    $.each(response.chatHistory, function (indx, valu) {
+                        //if (valu.sendBy === "user") {
+                        //    container = container + prepareUserChatTemplate(valu.message);                   
+                        //}
+                        if (valu.sendBy === "bot") {
+                            container = container + prepareBotChatTemplate(valu.message, valu.isOption);
+                            window.currentQ = valu.questionNo
+                        }
+                    });
+                    $("#" + objectContainerElement).html(container);
+                    //$("#" + txtObjectElement).val('');
                 }
-            });
-            $("#" + objectContainerElement).html(container);
-            //$("#" + txtObjectElement).val('');
+            }
         }
+       
+        
         //console.log(response);
     });
 }

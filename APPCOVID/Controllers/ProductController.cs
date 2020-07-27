@@ -13,7 +13,7 @@ namespace APPCOVID.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            Authorize("customer");
+            Authorize();
             IList<ProductViewModel> prodList = new ProductHelper().GetAll();
             return View("~/Views/Products/Index.cshtml", prodList);
         }
@@ -21,14 +21,14 @@ namespace APPCOVID.Controllers
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            Authorize();            
+            Authorize("customer");            
             ProductViewModel prodModel = new ProductHelper().GetAllById(id);
             return View("~/Views/Products/ViewDetails.cshtml", prodModel);
         }
         // GET: Product/Edit/5
         public ActionResult Edit(int id)
         {
-            Authorize();
+            Authorize("customer");
             ProductViewModel prodModel = new ProductHelper().GetAllById(id);
             return View("~/Views/Products/Edit.cshtml", prodModel);
         }
@@ -70,18 +70,24 @@ namespace APPCOVID.Controllers
         [HttpPost]
         public ActionResult Create(ProductViewModel productInsurance)
         {
-            try
+            if (productInsurance != null && productInsurance.SHORTDESCRIPTION != "" && productInsurance.PRODUCTURL != "" && productInsurance.DESCRIPTION != "" && productInsurance.IMAGEURL != "")
             {
-                productInsurance.STATUS = "Active";
-                productInsurance.CUSTOMERID = Convert.ToInt32(HttpContext.Session.GetObject("coviduserid"));
+                try
+                {
+                    productInsurance.STATUS = "Active";
+                    productInsurance.CUSTOMERID = Convert.ToInt32(HttpContext.Session.GetObject("coviduserid"));
 
-                new ProductHelper().CreateProduct(productInsurance);
-                return RedirectToAction(nameof(Index));
+                    new ProductHelper().CreateProduct(productInsurance);
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    ex.Message.ToString();
+                    return View();
+                }
             }
-            catch (Exception ex)
-            {
-                ex.Message.ToString();
-                return View();
+            else {
+                return RedirectToAction(nameof(Index));
             }
         }
 

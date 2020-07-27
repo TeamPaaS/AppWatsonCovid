@@ -7,62 +7,67 @@
 
 <h1>Product Details</h1>
 
+
+
+
+@*----------------------------------*@
+fa-th-list
 <div>
     <hr />
 
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             Product Id
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PRODUCTID)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             Product Type
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.PRODUCTTYPE)
         </dd>
-        <dt class = "col-sm-2">
-           Customer Id
+        <dt class="col-sm-2">
+            Customer Id
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.CUSTOMERID)
         </dd>
-        <dt class = "col-sm-2">
-           Infection Stage
+        <dt class="col-sm-2">
+            Infection Stage
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.STAGE)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             Description
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.DESCRIPTION)
         </dd>
-        <dt class = "col-sm-2">
-          Short Description
+        <dt class="col-sm-2">
+            Short Description
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SHORTDESCRIPTION)
         </dd>
-        <dt class = "col-sm-2">
-           Image
+        <dt class="col-sm-2">
+            Image
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.IMAGEURL)
         </dd>
-        <dt class = "col-sm-2">
-           Product Url
+        <dt class="col-sm-2">
+            Product Url
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             <a href=" @Html.DisplayFor(model => model.PRODUCTURL)"> @Html.DisplayFor(model => model.PRODUCTURL)</a>
         </dd>
-        <dt class = "col-sm-2">
-          Status
+        <dt class="col-sm-2">
+            Status
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.STATUS)
         </dd>
     </dl>
@@ -70,6 +75,6 @@
 <div>
     @{int roleId = ViewBag.roleId;}
     @if (roleId != 3)
-        @Html.ActionLink("Edit", "Edit", new { id = Model.PRODUCTID }) 
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PRODUCTID })
     <a asp-action="Index">Back to List</a>
 </div>

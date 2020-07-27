@@ -13,10 +13,10 @@ namespace APPCOVID.DAL.DataManagers.Managers
            "PRODUCTTYPE VARCHAR(50) NOT NULL, " +
            "CUSTOMERID INT NOT NULL, " +
            "STAGE INT NOT NULL, " +
-           "DESCRIPTION VARCHAR(1000) NULL, " +
-           "SHORTDESCRIPTION VARCHAR(500) NOT NULL, " +
-           "IMAGEURL VARCHAR(150) NULL, " +
-           "PRODUCTURL VARCHAR(150) NULL, " +
+           "DESCRIPTION VARCHAR(500) NULL, " +
+           "SHORTDESCRIPTION VARCHAR(100) NOT NULL, " +
+           "IMAGEURL VARCHAR(500) NULL, " +
+           "PRODUCTURL VARCHAR(500) NULL, " +
            "STATUS VARCHAR(20) NOT NULL, " +
            "PRIMARY KEY (PRODUCTID) );";
 

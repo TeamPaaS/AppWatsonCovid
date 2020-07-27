@@ -7,31 +7,80 @@
 @{ int roleId = ViewBag.roleId; }
 @if (roleId == 3)
 {
-    <div class="col-xl-4 col-lg-5">
-        <div class="card shadow mb-4">
-            <!-- Card Header - Dropdown -->
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Test Result</h6>
-                <div class="dropdown no-arrow">
-                    @{
-                        string testResult = "Not yet take any Test";
-                        if (ViewBag.testResult != null)
+<div class="col-xl-12 col-lg-12">
+    <div class="card shadow mb-12">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <div class="dropdown no-arrow">
+                @{
+                        if (ViewBag.testResultDetails == null)
                         {
-                            APPCOVID.Entity.ViewModels.ConversationViewModel vm = (APPCOVID.Entity.ViewModels.ConversationViewModel)ViewBag.testResult;
-                            testResult = vm.MESSAGE;
+
+                    string nottestResult = "Not yet take any Test";
+                    <div class="alert alert-secondary" role="alert">
+                        You have not affected with @nottestResult
+                    </div>
+
+                }else
+                {
+                       var vm = (IList<APPCOVID.BAL.InfectionSeverityCodesModel>)ViewBag.testResultDetails;
+                                foreach(var itm in vm){
+                                        if(itm.SeverityCode>5 && itm.Answer)
+                        {
+                    <div class="alert alert-danger" role="alert">
+                        You are affected with: @itm.InfectionDesc
+                    </div>
+                                    }if(itm.SeverityCode>=3 && itm.SeverityCode<=5 && itm.Answer){
+                    <div class="alert alert-warning" role="alert">
+                        You are affected with: @itm.InfectionDesc
+                    </div>
+                        }if(itm.SeverityCode<3 && itm.Answer){
+                    <div class="alert alert-primary" role="alert">
+                        You are affected with: @itm.InfectionDesc
+                    </div>
+                                        }if(!itm.Answer){
+                    <div class="alert alert-success" role="alert">
+                        You have not affected with @itm.InfectionDesc
+                    </div>
+                                        }
                         }
+
+                    <hr />
+                if(ViewBag.affectedStage==3){
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <p>Aww yeah, you are a COVID19 Prime Suspect and Take medical assitance and go to hospital</p>
+                        <hr>
+                        <p class="mb-0">Please find Medical Assitance from the Product Page.</p>
+                    </div>
                     }
-                    <b>@testResult</b>
-                </div>
-
+                if(ViewBag.affectedStage==2){
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <p>You are affected with some symptoms of COVID19, immediately take medical assistance, and stay home quarantine.</p>
+                        <hr>
+                        <p class="mb-0">Please find Medical Assitance from the Product Page.</p>
+                    </div>
+                    }
+                if(ViewBag.affectedStage==1){
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <p>You are not infected with COVID, may you have minor infections but those can cure at home. Please stay safe and stay at home.</p>
+                        <hr>
+                        <p class="mb-0">Please find Medical Assitance and Insurance Products from the Product Page. and this will help to keep you and your family safe.</p>
+                    </div>
+                    }
+                }
+                }
             </div>
-
-            <!-- Card Body -->
-
-
         </div>
 
+        <!-- Card Body -->
+
+
     </div>
+
+</div>
 }
 
 <!-- Content Row -->

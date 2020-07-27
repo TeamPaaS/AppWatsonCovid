@@ -25,7 +25,7 @@
                 <p class="h5 mb-0 py-1">Ask Your Queries</p>
             </div>
             <div class="px-4 py-5 chat-box bg-white" id="chatContainer">
-                <!-- Sender Message-->                
+                <!-- Sender Message-->
             </div>
             <div id="loader" style="display:none; margin-bottom:5px;">
                 <div id="fountainG">
@@ -41,29 +41,36 @@
             </div>
             <!-- Typing area -->
             @*<div class="bg-light">
-                <div class="input-group">
-                    <input id="txtChatMsg" type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
-                    <div class="input-group-append">
-                        <a href="javascript::void(0)" id="button-addon2" class="btn btn-link" onclick="ScreenTest('scrntst', false)"> <i class="fa fa-paper-plane"></i></a>
+                    <div class="input-group">
+                        <input id="txtChatMsg" type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
+                        <div class="input-group-append">
+                            <a href="javascript::void(0)" id="button-addon2" class="btn btn-link" onclick="ScreenTest('scrntst', false)"> <i class="fa fa-paper-plane"></i></a>
+                        </div>
                     </div>
-                </div>
-            </div>*@
+                </div>*@
 
         </div>
     </div>
 </div>
+<div id="showTestCompleteBtn" style="display:none">
+    <a asp-action="Index" asp-controller="home" class="btn btn-primary">
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+       Test Complete go to Home
+    </a>
+</div>
 
 @section pageScripts{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/CovidApp/Chatbot.js"></script>
+
+    <script src="~/js/CovidApp/ScreeningTestChatbotScript.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            ScreenTest(true,0);
+            ScreenTest(true, 0);
         });
-        //$(document).on('keypress', function (e) {
-        //    if (e.which == 13) {
-        //        ScreenTest('scrntst', false);
-        //    }
-        //});
+            //$(document).on('keypress', function (e) {
+            //    if (e.which == 13) {
+            //        ScreenTest('scrntst', false);
+            //    }
+            //});
     </script>
 }
