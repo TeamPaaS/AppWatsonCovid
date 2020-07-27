@@ -28,7 +28,7 @@ namespace APPCOVID.Controllers
         // GET: Transaction/Details/5
         public ActionResult SubscriptionDetails()
         {
-            Authorize("customer");
+            Authorize();
             string userId = HttpContext.Session.GetObject("coviduserid");
             IList<TransactionViewModel> transList = new TransactionHelper().GetAllByUserId(Convert.ToInt32(userId));
             return View("~/Views/Transaction/Subscription.cshtml", transList);
