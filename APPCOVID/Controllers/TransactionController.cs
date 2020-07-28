@@ -5,6 +5,7 @@ using APPCOVID.Models.Session;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace APPCOVID.Controllers
 {
@@ -31,6 +32,13 @@ namespace APPCOVID.Controllers
             Authorize();
             string userId = HttpContext.Session.GetObject("coviduserid");
             IList<TransactionViewModel> transList = new TransactionHelper().GetAllByUserId(Convert.ToInt32(userId));
+            return View("~/Views/Transaction/Subscription.cshtml", transList);
+        }
+        // GET: Transaction
+        public ActionResult AllSubscriptionDetails()
+        {
+            Authorize();
+            IList<TransactionViewModel> transList = new TransactionHelper().GetAll().Where(t => t.STATUS == "Active").ToList();
             return View("~/Views/Transaction/Subscription.cshtml", transList);
         }
         // GET: Transaction/Edit/5

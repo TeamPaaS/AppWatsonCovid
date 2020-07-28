@@ -29,7 +29,7 @@ namespace APPCOVID.Controllers
         }
 
         public IActionResult Index()
-        {
+        {           
             return View("~/Views/Account/Signin.cshtml");
         }
 
@@ -40,7 +40,7 @@ namespace APPCOVID.Controllers
             try
             {
                 if (string.IsNullOrEmpty(model.UserName) || string.IsNullOrEmpty(model.Password))
-                {
+                {                
                     return RedirectToActionPermanent("Index", "Account");
                 }
                 else
@@ -53,7 +53,7 @@ namespace APPCOVID.Controllers
                 }
             }
             catch (Exception ex)
-            {
+            {               
                 throw ex;
             }
             return RedirectToActionPermanent("Index", "Account");
@@ -70,6 +70,9 @@ namespace APPCOVID.Controllers
         {
             if (_accountHelper.IsEmailExists(register.Email)){
                 return Register("Email already exists");
+            }
+            if (register.Password!=register.ConfirmPassword) {
+                return Register("Password and Confirm Password Does not Match");
             }
             RegisterViewModel registerViewModel = new RegisterViewModel();
             registerViewModel.UserAccount = new UserAccountModel

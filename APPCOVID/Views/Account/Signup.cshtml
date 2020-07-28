@@ -42,10 +42,11 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input asp-for="FullName" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Full Name">
-                                        <span asp-validation-for="FullName" class="text-danger"></span>
+                                        <span  asp-validation-for="FullName" class="text-danger"></span>
+
                                     </div>
                                     <div class="col-sm-6">
-                                        <input asp-for="Phone" type="text" class="form-control form-control-user" placeholder="Phone Number" maxlength="10">
+                                        <input asp-for="Phone" type="number" class="form-control form-control-user" id="mobile" placeholder="Phone Number" maxlength="10">
                                         <span asp-validation-for="Phone" class="text-danger"></span>
                                     </div>
                                 </div>
@@ -59,16 +60,17 @@
                                         <span asp-validation-for="Password" class="text-danger"></span>
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirm Password">
+                                        <input asp-for="ConfirmPassword" type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirm Password">
+                                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-user btn-block">Register Account</button>
+                                <button type="submit" id="submitbtn" class="btn btn-primary btn-user btn-block">Register Account</button>
                                 <hr>
                             </form>
                             <hr>
                             @*<div class="text-center">
-            <a class="small" href="forgot-password.html">Forgot Password?</a>
-        </div>*@
+                                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                </div>*@
                             <div class="text-center">
                                 <a class="small" asp-action="Index" asp-controller="Account">Already have an account? Login!</a>
                             </div>
@@ -80,13 +82,12 @@
                 </div>
             </div>
         </div>
-       
+
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/jquery/jquery.min.js">IDBCursor</script>
     <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="~/vendor/jquery-easing/jquery.easing.min.js"></script>
 
@@ -97,3 +98,5 @@
 </body>
 
 </html>
+
+

@@ -16,5 +16,9 @@ namespace APPCOVID.Entity.ViewModels
         [StringLength(8, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 6)]
         [Required(AllowEmptyStrings = false, ErrorMessage = "*")]
         public string Password { get; set; }
+
+        [StringLength(8, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 6)]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "*")]
+        public string ConfirmPassword { get; set; }
     }
 }

@@ -131,6 +131,46 @@ namespace APPCOVID.Controllers
             return Ok(chatViewModel);
         }
 
+        [HttpGet]
+        public IActionResult InsuranceChatbot()
+        {
+            Authorize();
+            return View("~/Views/Chatbot/InsuranceChatbot.cshtml");
+        }
+        [HttpPost]
+        public IActionResult SendInsuranceFaqMessage(UserQueryModel userQueryModel)
+        {
+            Authorize();
+            ChatViewModel chatViewModel = new ChatViewModel();
+            string message = Request.Headers["MessageToSend"];
+            var conversation = new List<ConversatioMessage>();
+            conversation.Add(new ConversatioMessage { Message = userQueryModel.UserQuery, SendBy = "user" });
+            OutputData response = new InsuranceWatsonChatbotHelper().MessageToInsuranceCovid19Bot(userQueryModel.UserQuery);
+            conversation.Add(new ConversatioMessage { SendBy = "bot", Message = response.Text.Count > 0 ? response.Text[0] : "" });
+            chatViewModel.ChatHistory = conversation;
+            return Ok(chatViewModel);
+        }
+        [HttpGet]
+        public IActionResult FaqChatbot()
+        {
+            Authorize();
+            return View("~/Views/Chatbot/FaqChatbot.cshtml");
+        }
+        [HttpPost]
+        public IActionResult SendCovidFaqMessage(UserQueryModel userQueryModel)
+        {
+            Authorize();
+            ChatViewModel chatViewModel = new ChatViewModel();
+            string message = Request.Headers["MessageToSend"];
+            var conversation = new List<ConversatioMessage>();
+            conversation.Add(new ConversatioMessage { Message = userQueryModel.UserQuery, SendBy = "user" });
+            OutputData response = new FaqChatbotHelper().MessageToFaqCovid19Bot(userQueryModel.UserQuery);
+            conversation.Add(new ConversatioMessage { SendBy = "bot", Message = response.Text.Count > 0 ? response.Text[0] : "" });
+            chatViewModel.ChatHistory = conversation;
+            return Ok(chatViewModel);
+        }
+
+
         //[HttpPost]
         //public IActionResult SendMessage(UserQueryModel userQueryModel)
         //{
@@ -144,6 +184,6 @@ namespace APPCOVID.Controllers
         //    return Index(chatViewModel);
         //}
 
-        
+
     }
 }
