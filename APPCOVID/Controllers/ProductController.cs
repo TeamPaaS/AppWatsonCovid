@@ -15,13 +15,15 @@ namespace APPCOVID.Controllers
         {
             Authorize();
             IList<ProductViewModel> prodList = new ProductHelper().GetAll();
+            int stage = Convert.ToInt32(HttpContext.Session.GetObject("OST_Result_Stage") ?? "0");
+            ViewBag.activeProductsByStage = stage > 0 ? new ProductHelper().GetAll(stage) : new ProductHelper().GetAll();
             return View("~/Views/Products/Index.cshtml", prodList);
         }
 
         // GET: Product/Details/5
         public ActionResult Details(int id)
         {
-            Authorize("customer");            
+            Authorize("customer");
             ProductViewModel prodModel = new ProductHelper().GetAllById(id);
             return View("~/Views/Products/ViewDetails.cshtml", prodModel);
         }
@@ -86,7 +88,8 @@ namespace APPCOVID.Controllers
                     return View();
                 }
             }
-            else {
+            else
+            {
                 return RedirectToAction(nameof(Index));
             }
         }

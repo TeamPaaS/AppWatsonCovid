@@ -17,7 +17,7 @@
 </head>
 <body id="page-top">
     <div id="wrapper">
-
+        
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -53,19 +53,19 @@
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Covid19 Test:</h6>
                             <a class="collapse-item" asp-controller="Chatbot" asp-action="ChatbotFaq"> Take Screening-Test</a>
-                           
+
 
                         </div>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                         <i class="fas fa-fw fa-th-list"></i>
                         <span>Products Offered:</span>
                     </a>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
-                           <h6 class="collapse-header">Products:</h6>
+                            <h6 class="collapse-header">Products:</h6>
                             <a class="collapse-item" asp-controller="Product" asp-action="Index"> View Products</a>
 
                         </div>
@@ -92,7 +92,7 @@
                             <a class="collapse-item" asp-controller="Product" asp-action="Index">Manage Products</a>
                             <h6 class="collapse-header">Transactions:</h6>
                             <a class="collapse-item" asp-controller="Transaction" asp-action="SubscriptionDetails">Manage Transactions</a>
-                           
+
                             @*<a class="collapse-item" asp-controller="Transaction" asp-action="Index">Manage Transaction</a>*@
                         </div>
                     </div>
@@ -160,11 +160,11 @@
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
+                                @*<a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <div class="dropdown-divider"></div>
+                                <div class="dropdown-divider"></div>*@
                                 <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
@@ -177,15 +177,17 @@
                 </nav>
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
+                @{ string crmUrl = "https://ac476ap.adobesandbox.com/webApp/referYourFriend?id=" + ViewBag.UserId;}
                 <div class="container-fluid">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">@ViewBag.pageHeader</h1>
-                        <div class="col-sm-6" >
+                        <a class="btn btn-primary offset-10" href="@crmUrl">Refer</a>
+                        <div class="col-sm-6">
                             @*<a asp-controller="Chatbot" asp-action="ChatbotFaq" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-comments fa-sm text-white-50"></i> Ask Covid FAQ</a>*@
-                            
+
                         </div>
-                        </div>
+                    </div>
 
                     <!-- Content Row -->
                     <div class="row">

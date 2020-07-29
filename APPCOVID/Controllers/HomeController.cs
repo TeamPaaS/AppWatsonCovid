@@ -32,22 +32,26 @@ namespace APPCOVID.Controllers
             {
                 IList<InfectionSeverityCodesModel> infections = new ConversationHelper().FindInfections(this.CurrentUserId, "OST");
                 int result = 0;
+                int affectedStage = 0;
                 result = infections.Where(t => t.Answer).Sum(t => t.SeverityCode);
                 HttpContext.Session.SetObject("OST_Result", result.ToString());
                 ViewBag.testResultDetails = result > 0 ? infections : null;
                 if (result > 15 && result <= 30)
                 {
-                    ViewBag.affectedStage = 3;
+                    affectedStage = 3;
                 }
                 if (result > 5 && result <= 15)
                 {
-                    ViewBag.affectedStage = 2;
+                    affectedStage = 2;
                 }
                 if (result <= 5)
                 {
-                    ViewBag.affectedStage = 1;
+                    affectedStage = 1;
                 }
+                HttpContext.Session.SetObject("OST_Result_Stage", affectedStage.ToString());
+                ViewBag.affectedStage = affectedStage;
             }
+            ViewBag.UserId = this.CurrentUserId;
             return View();
         }
 

@@ -1,0 +1,1986 @@
+{
+  "intents": [
+    {
+      "intent": "Insurance_Cancel_Policy",
+      "examples": [
+        {
+          "text": "I don't want to be covered"
+        },
+        {
+          "text": "I have been cheated give me my money back"
+        },
+        {
+          "text": "I no longer require insurance policies."
+        },
+        {
+          "text": "I want my contract to be terminated and my money returned"
+        },
+        {
+          "text": "I withdraw from your services because I am annoyed with them"
+        },
+        {
+          "text": "Kill the policy"
+        },
+        {
+          "text": "Pl break the contract and return my money?"
+        },
+        {
+          "text": "This policy does not suit me"
+        },
+        {
+          "text": "What should I do to close my life insurance policy plan?"
+        },
+        {
+          "text": "Why should I tolerate your unfair contract?"
+        },
+        {
+          "text": "Will you need proof of insurance for canceling my policy now?"
+        },
+        {
+          "text": "Buying your policy was the biggest mistake"
+        },
+        {
+          "text": "Drop my policy now"
+        },
+        {
+          "text": "How much is the penalty to cancel my car insurance policy early?"
+        },
+        {
+          "text": "I am lonely I don't need life insurance anymore"
+        },
+        {
+          "text": "I certainly don't want this useless policy."
+        },
+        {
+          "text": "I wish to stop making payments on my policy."
+        },
+        {
+          "text": "I don't like this policy"
+        },
+        {
+          "text": "I don't see a point in having this policy."
+        },
+        {
+          "text": "I don't want this bad policy"
+        }
+      ],
+      "description": "Cancel a policy."
+    },
+    {
+      "intent": "General_Agent_Capabilities",
+      "examples": [
+        {
+          "text": "Hi, what do you do?"
+        },
+        {
+          "text": "How can I use you?"
+        },
+        {
+          "text": "How can you help me?"
+        },
+        {
+          "text": "How can you solve my problems?"
+        },
+        {
+          "text": "I'd like to know what type of questions you can answer for me."
+        },
+        {
+          "text": "Is there anything you can help me with?"
+        },
+        {
+          "text": "Tell me about what kind of things you do?"
+        },
+        {
+          "text": "Tell me something"
+        },
+        {
+          "text": "What are my options that you can help with?"
+        },
+        {
+          "text": "What are you able to deal with?"
+        },
+        {
+          "text": "What are my options?"
+        },
+        {
+          "text": "What are you able to understand?"
+        },
+        {
+          "text": "What are you capable of?"
+        },
+        {
+          "text": "What are you good at?"
+        },
+        {
+          "text": "What are you used for?"
+        },
+        {
+          "text": "What are your skills?"
+        },
+        {
+          "text": "What can I ask you to do?"
+        },
+        {
+          "text": "What do you do?"
+        },
+        {
+          "text": "What do you handle?"
+        },
+        {
+          "text": "What else can you help me with?"
+        },
+        {
+          "text": "What features are in here?"
+        },
+        {
+          "text": "What is this 4?"
+        },
+        {
+          "text": "What kinds of things can you do?"
+        },
+        {
+          "text": "Where can I find the frequently asked questions?"
+        },
+        {
+          "text": "How do I use you?"
+        },
+        {
+          "text": "I do not know what to ask"
+        },
+        {
+          "text": "Can you please give me a list of the types of things you can help me with?"
+        },
+        {
+          "text": "Can you tell me what services you are able to help me with?"
+        },
+        {
+          "text": "Do you have a list of things I can talk to you about?"
+        },
+        {
+          "text": "Help now"
+        }
+      ],
+      "description": "Request capabilities of the bot."
+    },
+    {
+      "intent": "General_Negative_Feedback",
+      "examples": [
+        {
+          "text": "You are on my nerves"
+        },
+        {
+          "text": "You're too stupid"
+        },
+        {
+          "text": "You're really irritating"
+        },
+        {
+          "text": "You're really frustrating"
+        },
+        {
+          "text": "You do not seem smart"
+        },
+        {
+          "text": "You are very frustrating"
+        },
+        {
+          "text": "You are having delusions"
+        },
+        {
+          "text": "Why are you stupid?"
+        },
+        {
+          "text": "Why are you so annoying?"
+        },
+        {
+          "text": "Stupid"
+        },
+        {
+          "text": "Robots are stupid"
+        },
+        {
+          "text": "Robots are boring"
+        },
+        {
+          "text": "Quit annoying me"
+        },
+        {
+          "text": "It is annoying"
+        },
+        {
+          "text": "I hate you"
+        },
+        {
+          "text": "I hate this!"
+        },
+        {
+          "text": "I do not like you"
+        },
+        {
+          "text": "Hate you"
+        },
+        {
+          "text": "Everyone hates you"
+        },
+        {
+          "text": "Do not like you?"
+        }
+      ],
+      "description": "Express unfavorable feedback."
+    },
+    {
+      "intent": "Insurance_Update_Existing_Claim",
+      "examples": [
+        {
+          "text": "Can I see the revised form?"
+        },
+        {
+          "text": "What should be done in order to change personal details in the claim process?"
+        },
+        {
+          "text": "What is the process of updating details in already existing claim?"
+        },
+        {
+          "text": "What is the procedure for making changes to an existing claim?"
+        },
+        {
+          "text": "Want to modify the claim filed recently"
+        },
+        {
+          "text": "Want to download the modification form"
+        },
+        {
+          "text": "Want to add to my claim form"
+        },
+        {
+          "text": "Wanna know about how can I change my permanent address in the existing claim"
+        },
+        {
+          "text": "Wanna change my personal info in the claim, please help"
+        },
+        {
+          "text": "View and revise my claim"
+        },
+        {
+          "text": "Update my claim now"
+        },
+        {
+          "text": "Revise my claim"
+        },
+        {
+          "text": "My email id is incorrect in the claim form. please tell me how to change it."
+        },
+        {
+          "text": "Is there any process to change my address in already existing claim?"
+        },
+        {
+          "text": "I have not provided alternate address in my claim form. I would like to update my claim."
+        },
+        {
+          "text": "I have changed my contact no, how to change that in the claim as well"
+        },
+        {
+          "text": "How to update my changed mobile number in claim form?"
+        },
+        {
+          "text": "How can I update my account number on the claim form?"
+        },
+        {
+          "text": "Correct submitted claim"
+        },
+        {
+          "text": "Can existing claim be updated with correct details?"
+        }
+      ],
+      "description": "Access an existing claim and update its details."
+    },
+    {
+      "intent": "Insurance_Policy_Inquiry",
+      "examples": [
+        {
+          "text": "Can I be compensated for all the loss?"
+        },
+        {
+          "text": "Why is this feature so expensive?"
+        },
+        {
+          "text": "Why are ambulance charges not considered?"
+        },
+        {
+          "text": "What is the cost of health coverage?"
+        },
+        {
+          "text": "What is max allowance on hospital room visit?"
+        },
+        {
+          "text": "What are the sub limits?"
+        },
+        {
+          "text": "What are the exclusions in my personal liability insurance?"
+        },
+        {
+          "text": "What amount I have to pay if I get a business income coverage?"
+        },
+        {
+          "text": "So what services are not a part of personal liability policy?"
+        },
+        {
+          "text": "Is there any way to know the travel theft can be covered under my running policy?"
+        },
+        {
+          "text": "Is personal injury protection costly?"
+        },
+        {
+          "text": "I want to know theft of personal belongs during travel are covered under my current policy"
+        },
+        {
+          "text": "How much does emergency roadside cost?"
+        },
+        {
+          "text": "Am I covered for disability?"
+        },
+        {
+          "text": "Does my patient record get factored into the cost?"
+        },
+        {
+          "text": "Does my dental filling coverage require me to pay up first before it takes effect?"
+        },
+        {
+          "text": "Do you apply deductions on each product?"
+        },
+        {
+          "text": "Coverage limit inquiry"
+        },
+        {
+          "text": "Can you share a list of policy related exclusion?"
+        },
+        {
+          "text": "Are pre-existing conditions covered?"
+        }
+      ],
+      "description": "Request information about a policy."
+    },
+    {
+      "intent": "Insurance_Add_Beneficiary",
+      "examples": [
+        {
+          "text": "Could you tell me how can I add beneficiaries to my policy?"
+        },
+        {
+          "text": "When I die id like my son to get my benefits?"
+        },
+        {
+          "text": "Put my brother in contact"
+        },
+        {
+          "text": "My wife will be the sole beneficiary"
+        },
+        {
+          "text": "My family desperately needs money"
+        },
+        {
+          "text": "Let my wife have the money."
+        },
+        {
+          "text": "Is it possible to name more than 2 beneficiaries on my retirement policy?"
+        },
+        {
+          "text": "I would like my son to be my beneficiary"
+        },
+        {
+          "text": "I want to leave behind cash for my son"
+        },
+        {
+          "text": "I want to add a beneficiary to my existing insurance policy."
+        },
+        {
+          "text": "I wanna give my wealth to my sister"
+        },
+        {
+          "text": "I need to name my wife as beneficiary for my life insurance."
+        },
+        {
+          "text": "I couldn't find the option to add a beneficiary on your portal. can you please help."
+        },
+        {
+          "text": "How does one add more than one beneficiary?"
+        },
+        {
+          "text": "How can I add beneficiaries to my policy?"
+        },
+        {
+          "text": "Help me in adding another beneficiary to my insurance policy."
+        },
+        {
+          "text": "Help me designate another beneficiary on my insurance policy."
+        },
+        {
+          "text": "Give my profits to the charity"
+        },
+        {
+          "text": "Daughter should receive benefits"
+        },
+        {
+          "text": "Can I add my future child to my policy?"
+        }
+      ],
+      "description": "Add another beneficiary to an existing policy."
+    },
+    {
+      "intent": "Insurance_View_Insurance_ID",
+      "examples": [
+        {
+          "text": "Where can get details for proof of insurance?"
+        },
+        {
+          "text": "Can I get my poi on my mobile?"
+        },
+        {
+          "text": "Can my agent give me my poi?"
+        },
+        {
+          "text": "Can you assist me to get poi?"
+        },
+        {
+          "text": "Can you email me poi?"
+        },
+        {
+          "text": "Can you please give me poi?"
+        },
+        {
+          "text": "Can you please provide details of poi?"
+        },
+        {
+          "text": "Can you please show me poi?"
+        },
+        {
+          "text": "Do you know from where I can download poi card?"
+        },
+        {
+          "text": "How can I find poi?"
+        },
+        {
+          "text": "How to view poi?"
+        },
+        {
+          "text": "I need information of poi"
+        },
+        {
+          "text": "I want to know information about poi"
+        },
+        {
+          "text": "I'd like to see poi"
+        },
+        {
+          "text": "Is there a toll-free number where I can get help on my insurance id?"
+        },
+        {
+          "text": "Is there a way to get poi?"
+        },
+        {
+          "text": "What is link to download proof of insurance?"
+        },
+        {
+          "text": "Where can I get my insurance id?"
+        },
+        {
+          "text": "Where can I see proof of insurance?"
+        },
+        {
+          "text": "Where can I view my insurance id?"
+        }
+      ],
+      "description": "Request proof of insurance or policy ID."
+    },
+    {
+      "intent": "General_Positive_Feedback",
+      "examples": [
+        {
+          "text": "Brilliant!"
+        },
+        {
+          "text": "You've been so helpful :)"
+        },
+        {
+          "text": "You're a genius!"
+        },
+        {
+          "text": "You the man"
+        },
+        {
+          "text": "You gave me exactly what I need!"
+        },
+        {
+          "text": "You are wonderful"
+        },
+        {
+          "text": "You are the best"
+        },
+        {
+          "text": "You are great"
+        },
+        {
+          "text": "You are awesome"
+        },
+        {
+          "text": "This is so cool"
+        },
+        {
+          "text": "This is great"
+        },
+        {
+          "text": "This is good"
+        },
+        {
+          "text": "Thank you"
+        },
+        {
+          "text": "Ok thank you"
+        },
+        {
+          "text": "Love your work"
+        },
+        {
+          "text": "I'm looking forward to working with you again! :)"
+        },
+        {
+          "text": "I like what you did there! :)"
+        },
+        {
+          "text": "How cool is this?"
+        },
+        {
+          "text": "Can't believe you are that good"
+        }
+      ],
+      "description": "Express positive sentiment or gratitude."
+    },
+    {
+      "intent": "Insurance_View_Claim_Status",
+      "examples": [
+        {
+          "text": "Do my claim proceed further?"
+        },
+        {
+          "text": "Give me info about my current claim."
+        },
+        {
+          "text": "Has a decision been reached?"
+        },
+        {
+          "text": "Help me to know if there is an update for my claim"
+        },
+        {
+          "text": "How to check health insurance claim status online?"
+        },
+        {
+          "text": "I need the money immediately, can they approve it quickly?"
+        },
+        {
+          "text": "I want new information about my claim"
+        },
+        {
+          "text": "I want to know if my claim has been rejected."
+        },
+        {
+          "text": "Is it possible to know the progress of my insurance claim?"
+        },
+        {
+          "text": "It seems the status is stills at pending"
+        },
+        {
+          "text": "The status still in pending for like 3 weeks"
+        },
+        {
+          "text": "What is the date of approval?"
+        },
+        {
+          "text": "What is the progress on my claim?"
+        },
+        {
+          "text": "When do I get my money?"
+        },
+        {
+          "text": "When my claim is gonna be processed?"
+        },
+        {
+          "text": "When was the claim approved?"
+        },
+        {
+          "text": "Where is my money?"
+        },
+        {
+          "text": "Which information do I need to provide to check my claim's status?"
+        },
+        {
+          "text": "Would it be possible to know claim status over a call?"
+        },
+        {
+          "text": "Can you tell me the progress on my case?"
+        }
+      ],
+      "description": "View the status of an existing claim."
+    },
+    {
+      "intent": "Insurance_Change_Policy",
+      "examples": [
+        {
+          "text": "I need to change my existing policy for my home, how that could be done?"
+        },
+        {
+          "text": "Can I cancel the terminal disease protection? it's too costly?"
+        },
+        {
+          "text": "Can I change my policy more than once in an year?"
+        },
+        {
+          "text": "Can I choose the date for switching to a new policy?"
+        },
+        {
+          "text": "Can long-term care benefit be added online?"
+        },
+        {
+          "text": "Can you assist me in changing to a better life insurance policy?"
+        },
+        {
+          "text": "Do you charge for making changes to the policy?"
+        },
+        {
+          "text": "Double indemnity is not in my budget"
+        },
+        {
+          "text": "How can I apply for an accidental death rider?"
+        },
+        {
+          "text": "How can I remove a financial planning benefit from my life insurance policy?"
+        },
+        {
+          "text": "I am cancelling due to the high cost of terminal illness protection."
+        },
+        {
+          "text": "I don't want the accelerated death benefit."
+        },
+        {
+          "text": "I no longer need the rider as I have found an alternative."
+        },
+        {
+          "text": "I want income disability covered."
+        },
+        {
+          "text": "I would also like bodily injury liability."
+        },
+        {
+          "text": "I'm gonna need additional coverage for disasters"
+        },
+        {
+          "text": "Is it possible to switch to a new policy?"
+        },
+        {
+          "text": "Pay me if I am in wrongful detention"
+        },
+        {
+          "text": "The waiver of premium is not useful"
+        },
+        {
+          "text": "Wanna opt for mortgage protection"
+        }
+      ],
+      "description": "Make a change to an insurance policy."
+    },
+    {
+      "intent": "Insurance_Remove_Beneficiary",
+      "examples": [
+        {
+          "text": "My wife shouldn't get any money for my insurance."
+        },
+        {
+          "text": "Please ensure my wife does not receive any funds from this policy."
+        },
+        {
+          "text": "My spouse is now deceased, so I need to amend my policy terms."
+        },
+        {
+          "text": "Wanna correct an error made in including daughter"
+        },
+        {
+          "text": "My son doesn't deserve benefits"
+        },
+        {
+          "text": "Do not allow my step son to have any of my insurance benefits?"
+        },
+        {
+          "text": "Do not give any money to my family?"
+        },
+        {
+          "text": "Don't pay any money to my spouse"
+        },
+        {
+          "text": "Exclude her from every benefit"
+        },
+        {
+          "text": "Have left my wife?"
+        },
+        {
+          "text": "Have separated from my wife?"
+        },
+        {
+          "text": "He is not entitled to my benefits"
+        },
+        {
+          "text": "I broke up with my wife"
+        },
+        {
+          "text": "I divorced"
+        },
+        {
+          "text": "My wife has gone away"
+        },
+        {
+          "text": "I do not want my wife to get benefits from my insurance"
+        },
+        {
+          "text": "I need you to remove my child's name from my contract"
+        },
+        {
+          "text": "I regret naming my wife in the contract"
+        },
+        {
+          "text": "It was an error to have my spouse's name listed on the policy."
+        },
+        {
+          "text": "My ex wife shouldn't be beneficiary on my policy."
+        }
+      ],
+      "description": "Remove a beneficiary from an existing policy."
+    },
+    {
+      "intent": "Insurance_Get_Quote",
+      "examples": [
+        {
+          "text": "What is the most basic policy?"
+        },
+        {
+          "text": "I am interested in your most advanced policy."
+        },
+        {
+          "text": "How much should I pay for auto insurance policy?"
+        },
+        {
+          "text": "How much does a life insurance policy cost?"
+        },
+        {
+          "text": "Do you offer a policy which doesn't cost me a fortune?"
+        },
+        {
+          "text": "Compare your personal liability protection with others"
+        },
+        {
+          "text": "Can you share indicative rates for a car insurance policy?"
+        },
+        {
+          "text": "Can you help me out in evaluating the best price for buying a travel insurance?"
+        },
+        {
+          "text": "Can I get cost estimation for my policy?"
+        },
+        {
+          "text": "Affordable auto insurance estimate"
+        },
+        {
+          "text": "I want to get my group insured. will you be able to tell me the cost of a group insurance policy"
+        },
+        {
+          "text": "I would like a quote for firm protection"
+        },
+        {
+          "text": "I'm thinking about getting insurance."
+        },
+        {
+          "text": "Please tell me the price that will be charged for insurance"
+        },
+        {
+          "text": "Start policy quote"
+        },
+        {
+          "text": "What are the charges for buying an insurance policy?"
+        },
+        {
+          "text": "What is the cost for buying an agriculture insurance?"
+        },
+        {
+          "text": "What's the lowest price for the insurance?"
+        },
+        {
+          "text": "Would you be able to provide me a list of estimated price an auto insurance would cost?"
+        },
+        {
+          "text": "I don't know how to estimate cost of a policy"
+        }
+      ],
+      "description": "Request a price estimate on a policy."
+    },
+    {
+      "intent": "Thanks",
+      "examples": [
+        {
+          "text": "okay"
+        },
+        {
+          "text": "ok"
+        },
+        {
+          "text": "thanks"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "Alright"
+        }
+      ],
+      "description": "Thanking for advice"
+    },
+    {
+      "intent": "General_Ending",
+      "examples": [
+        {
+          "text": "Have a nice day?"
+        },
+        {
+          "text": "Time to go"
+        },
+        {
+          "text": "That's everything"
+        },
+        {
+          "text": "That is all"
+        },
+        {
+          "text": "Thanks very much, bye!"
+        },
+        {
+          "text": "Thanks, bye!"
+        },
+        {
+          "text": "Thank you for your time"
+        },
+        {
+          "text": "Stop talking to me"
+        },
+        {
+          "text": "Stop doing this"
+        },
+        {
+          "text": "Shut up"
+        },
+        {
+          "text": "See you"
+        },
+        {
+          "text": "See you later"
+        },
+        {
+          "text": "Ok goodbye"
+        },
+        {
+          "text": "It was nice chatting with you"
+        },
+        {
+          "text": "I'm leaving now"
+        },
+        {
+          "text": "Im good thank you"
+        },
+        {
+          "text": "Im done"
+        },
+        {
+          "text": "I'm done"
+        },
+        {
+          "text": "I want to quit"
+        },
+        {
+          "text": "I have got to go"
+        },
+        {
+          "text": "I d like to stop doing this"
+        },
+        {
+          "text": "I am out of here"
+        },
+        {
+          "text": "I am leaving"
+        },
+        {
+          "text": "Hey bot go away"
+        },
+        {
+          "text": "Goodbye"
+        },
+        {
+          "text": "Good. bye."
+        },
+        {
+          "text": "Going now"
+        },
+        {
+          "text": "Get lost"
+        },
+        {
+          "text": "Go away"
+        },
+        {
+          "text": "Go off"
+        },
+        {
+          "text": "Bye bye"
+        },
+        {
+          "text": "Bye now"
+        },
+        {
+          "text": "Catch you later"
+        },
+        {
+          "text": "Cya later"
+        },
+        {
+          "text": "End trial"
+        },
+        {
+          "text": "Ending this session"
+        },
+        {
+          "text": "Finished now, good bye"
+        }
+      ],
+      "description": "End the conversation."
+    },
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "Heyy"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "good night"
+        },
+        {
+          "text": "Whats up?"
+        },
+        {
+          "text": "good afternoon"
+        },
+        {
+          "text": "Hi there!"
+        }
+      ],
+      "description": "Greeting the system"
+    },
+    {
+      "intent": "General_Connect_to_Agent",
+      "examples": [
+        {
+          "text": "Agent help"
+        },
+        {
+          "text": "I don't want to talk to you"
+        },
+        {
+          "text": "I don't want to talk to a bot."
+        },
+        {
+          "text": "How can I skip the recorded menu and go straight to a live person?"
+        },
+        {
+          "text": "Hi can you transfer me"
+        },
+        {
+          "text": "Can you assist me to connect to an agent?"
+        },
+        {
+          "text": "Customer service representative please."
+        },
+        {
+          "text": "Could you please transfer me to your master?"
+        },
+        {
+          "text": "Contact person"
+        },
+        {
+          "text": "Connect me to a live operator please."
+        },
+        {
+          "text": "Is there anyone there I can actually talk to for real?"
+        },
+        {
+          "text": "Need help from human"
+        },
+        {
+          "text": "Operator please"
+        },
+        {
+          "text": "I would like to speak to someone"
+        },
+        {
+          "text": "I would like to speak to a human"
+        },
+        {
+          "text": "I want to talk to a person"
+        },
+        {
+          "text": "I want an agent to help me"
+        },
+        {
+          "text": "I want agent"
+        },
+        {
+          "text": "I want a manager"
+        },
+        {
+          "text": "Do not want a robot?"
+        },
+        {
+          "text": "Can I talk to someone?"
+        },
+        {
+          "text": "Can I speak with somebody?"
+        },
+        {
+          "text": "Can I speak to an advisor?"
+        },
+        {
+          "text": "Can I speak to a live person?"
+        },
+        {
+          "text": "I need to speak to a representative. How would I go about doing so?"
+        },
+        {
+          "text": "Can I speak to a human please?"
+        },
+        {
+          "text": "Can I connect to an agent?"
+        },
+        {
+          "text": "Call agent"
+        },
+        {
+          "text": "Please assist me to get to an agent"
+        },
+        {
+          "text": "Please connect me to a live agent"
+        },
+        {
+          "text": "Please let me talk to a human being."
+        },
+        {
+          "text": "Pls connect"
+        },
+        {
+          "text": "Put me through to someone"
+        },
+        {
+          "text": "Send me to an agent"
+        },
+        {
+          "text": "Where is the closest agent?"
+        },
+        {
+          "text": "Yes, take me to a real person"
+        },
+        {
+          "text": "A real agent, please."
+        },
+        {
+          "text": "Can you connect me with a real person?"
+        }
+      ],
+      "description": "Request a human agent."
+    },
+    {
+      "intent": "General_Human_or_Bot",
+      "examples": [
+        {
+          "text": "How can you prove you are a human?"
+        },
+        {
+          "text": "Is this a computer?"
+        },
+        {
+          "text": "Am I talking to a person or am I talking to an AI?"
+        },
+        {
+          "text": "Am I talking to a Bot?"
+        },
+        {
+          "text": "Am I talking to Watson?"
+        },
+        {
+          "text": "Am I chatting with a human?"
+        },
+        {
+          "text": "Tell me, are you a human or no?"
+        },
+        {
+          "text": "Are you a human or a bot?"
+        },
+        {
+          "text": "Are you a robot?"
+        },
+        {
+          "text": "Are you even real?"
+        },
+        {
+          "text": "Are you human?"
+        },
+        {
+          "text": "Are you real?"
+        }
+      ],
+      "description": "Ask if speaking to a human or a bot."
+    },
+    {
+      "intent": "General_About_You",
+      "examples": [
+        {
+          "text": "Describe your self"
+        },
+        {
+          "text": "Why are you here?"
+        },
+        {
+          "text": "Who are you?"
+        },
+        {
+          "text": "Where were you born?"
+        },
+        {
+          "text": "Where are you from?"
+        },
+        {
+          "text": "What's your name?"
+        },
+        {
+          "text": "What should I know about you?"
+        },
+        {
+          "text": "What languages do you speak?"
+        },
+        {
+          "text": "Tell me something about yourself"
+        },
+        {
+          "text": "Tell me about your life"
+        },
+        {
+          "text": "Let us talk about you"
+        },
+        {
+          "text": "Introduce your self"
+        },
+        {
+          "text": "I want to set up the chat bot for my shop"
+        },
+        {
+          "text": "How old are you?"
+        },
+        {
+          "text": "How do you function?"
+        },
+        {
+          "text": "Do you know who you are?"
+        },
+        {
+          "text": "Do you have a name?"
+        },
+        {
+          "text": "Can I use another language?"
+        },
+        {
+          "text": "About you"
+        },
+        {
+          "text": "How can I configure you?"
+        }
+      ],
+      "description": "Request generic personal attributes."
+    },
+    {
+      "intent": "General_Security_Assurance",
+      "examples": [
+        {
+          "text": "I'd like proof of a secure chat"
+        },
+        {
+          "text": "How safe is my data?"
+        },
+        {
+          "text": "How is my credit card info secured?"
+        },
+        {
+          "text": "Is this an official chat?"
+        },
+        {
+          "text": "Is this conversation secure?"
+        },
+        {
+          "text": "Precautions hackers?"
+        },
+        {
+          "text": "Protection hacks?"
+        },
+        {
+          "text": "Secure conversation?"
+        },
+        {
+          "text": "What guards do you have in place to protect your customer's data?"
+        },
+        {
+          "text": "What makes this chat trustworthy?"
+        },
+        {
+          "text": "What safety measures are used to ensure that chat is secure?"
+        },
+        {
+          "text": "Why would I trust this chat?"
+        },
+        {
+          "text": "Will my conversation remain secured?"
+        },
+        {
+          "text": "How do I know this chat is not a scam?"
+        },
+        {
+          "text": "How do I know if my card info is kept safe?"
+        },
+        {
+          "text": "Do you have protection against hacks?"
+        },
+        {
+          "text": "Customer info secured?"
+        },
+        {
+          "text": "Conversation secure?"
+        },
+        {
+          "text": "Can I be sure that my stored card details are held securely?"
+        },
+        {
+          "text": "Are you safe on hackers?"
+        },
+        {
+          "text": "Are you safe?"
+        },
+        {
+          "text": "Is this a trusted chat site?"
+        },
+        {
+          "text": "Is there a reason to distrust this chat?"
+        },
+        {
+          "text": "Is my payment information secure?"
+        },
+        {
+          "text": "Is my card info secure?"
+        },
+        {
+          "text": "In what way can I tell if my plastic is safe?"
+        }
+      ],
+      "description": "Express concerns about the security of the bot."
+    },
+    {
+      "intent": "General_Greetings",
+      "examples": [
+        {
+          "text": "Hi there"
+        },
+        {
+          "text": "Hey you"
+        },
+        {
+          "text": "Hi advisor"
+        },
+        {
+          "text": "Hey twin"
+        },
+        {
+          "text": "Hey there"
+        },
+        {
+          "text": "Hey there all"
+        },
+        {
+          "text": "hi"
+        },
+        {
+          "text": "You there"
+        },
+        {
+          "text": "Who is this?"
+        },
+        {
+          "text": "What's up?"
+        },
+        {
+          "text": "What's new?"
+        },
+        {
+          "text": "Ok take me back"
+        },
+        {
+          "text": "Looking good eve"
+        },
+        {
+          "text": "How r u?"
+        },
+        {
+          "text": "How is it going?"
+        },
+        {
+          "text": "How have you been?"
+        },
+        {
+          "text": "How are you today?"
+        },
+        {
+          "text": "Good day"
+        },
+        {
+          "text": "Good evening"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Good to see you"
+        },
+        {
+          "text": "Greetings"
+        },
+        {
+          "text": "Have you been well?"
+        },
+        {
+          "text": "Hello Agent"
+        },
+        {
+          "text": "Hello I am looking for some help here"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hey how are you doing"
+        },
+        {
+          "text": "How are things going?"
+        }
+      ],
+      "description": "Greet the bot."
+    },
+    {
+      "intent": "General_Jokes",
+      "examples": [
+        {
+          "text": "Do you have a joke?"
+        },
+        {
+          "text": "Can you tell a joke?"
+        },
+        {
+          "text": "Are there jokes?"
+        },
+        {
+          "text": "Another joke"
+        },
+        {
+          "text": "What is your favorite joke?"
+        },
+        {
+          "text": "What do you do for fun?"
+        },
+        {
+          "text": "Tell me something funny"
+        },
+        {
+          "text": "Tell me a joke"
+        },
+        {
+          "text": "Surprise me with something hilarious"
+        },
+        {
+          "text": "One more joke"
+        },
+        {
+          "text": "I'm bored"
+        },
+        {
+          "text": "I want a joke"
+        },
+        {
+          "text": "I am getting bored"
+        },
+        {
+          "text": "Do you like humor?"
+        },
+        {
+          "text": "Do you like fun?"
+        },
+        {
+          "text": "Do you have humor?"
+        },
+        {
+          "text": "Can you tell me a joke?"
+        }
+      ],
+      "description": "Request a joke."
+    },
+    {
+      "intent": "Insurance_View_Policy",
+      "examples": [
+        {
+          "text": "What is link to download insurance policy?"
+        },
+        {
+          "text": "What is the expiration date of my health insurance?"
+        },
+        {
+          "text": "What is the start date of insurance?"
+        },
+        {
+          "text": "What's in my plan?"
+        },
+        {
+          "text": "What's the full amount of things which the plan covers?"
+        },
+        {
+          "text": "Can I view the details of the agreement?"
+        },
+        {
+          "text": "Where is the contract for insurance?"
+        },
+        {
+          "text": "Can you please show me my insurance policy?"
+        },
+        {
+          "text": "How do I download the policy to see?"
+        },
+        {
+          "text": "I want to look at policy terms."
+        },
+        {
+          "text": "I would prefer to view the contents of the contract"
+        },
+        {
+          "text": "List all risks"
+        },
+        {
+          "text": "Please show me my policy"
+        },
+        {
+          "text": "Pull up my policy please"
+        },
+        {
+          "text": "Read contract"
+        },
+        {
+          "text": "See contract"
+        },
+        {
+          "text": "Show policy"
+        },
+        {
+          "text": "Tell me everything is covered"
+        },
+        {
+          "text": "Terms and conditions info."
+        },
+        {
+          "text": "View policy"
+        }
+      ],
+      "description": "View the details of a policy."
+    },
+    {
+      "intent": "Insurance_Required_Documents_Inquiry",
+      "examples": [
+        {
+          "text": "Can you tell me if I need to submit a id proof?"
+        },
+        {
+          "text": "Can I post the original documents for processing my claim?"
+        },
+        {
+          "text": "Do I have to provide coverage proof?"
+        },
+        {
+          "text": "How should I send all property related papers?"
+        },
+        {
+          "text": "I just had an accident which admission notes would you need for a claim"
+        },
+        {
+          "text": "I need an assistance to know the required documents to file my claim."
+        },
+        {
+          "text": "I want to know the required test reports to submit to file my claim."
+        },
+        {
+          "text": "I would like to know about the physician's statement needs to submit to complete my claim."
+        },
+        {
+          "text": "List of documents for claim."
+        },
+        {
+          "text": "May I know medical history needs to submit to file my claim?"
+        },
+        {
+          "text": "Please tell me how many photos I need to upload."
+        },
+        {
+          "text": "Tell me if social security card will be required while submitting claim."
+        },
+        {
+          "text": "What is the alternative to providing a medical history?"
+        },
+        {
+          "text": "What kind of images are accepted with claim?"
+        },
+        {
+          "text": "What paperwork would be required?"
+        },
+        {
+          "text": "What test reports would be required?"
+        },
+        {
+          "text": "What's the alternative to a discharge summary?"
+        },
+        {
+          "text": "Which medical history are essential for a claim?"
+        },
+        {
+          "text": "Why do you need the same medical records that you took for underwriting?"
+        },
+        {
+          "text": "Why is my proof of residence insufficient?"
+        }
+      ],
+      "description": "Inquire about which documents must be submitted to complete a claim."
+    },
+    {
+      "intent": "Insurance_File_Claim",
+      "examples": [
+        {
+          "text": "Do you have any information regarding filing claims?"
+        },
+        {
+          "text": "Will I be able to file a claim from your portal?"
+        },
+        {
+          "text": "What should be done to file a claim?"
+        },
+        {
+          "text": "What is the process to file a claim?"
+        },
+        {
+          "text": "What are the steps to file a claim for a two wheeler?"
+        },
+        {
+          "text": "What a way to seek compensation for my loss?"
+        },
+        {
+          "text": "Wanted to know about claim filing"
+        },
+        {
+          "text": "Wanna file a claim for travel insurance"
+        },
+        {
+          "text": "My gold jewellary has been stolen, wanna file a claim."
+        },
+        {
+          "text": "Looking for some help with claim filing process."
+        },
+        {
+          "text": "Is there a section on your website for filing claim?"
+        },
+        {
+          "text": "Is it possible to file a claim using the purchase date?"
+        },
+        {
+          "text": "I wish to file a claim for property and liabilities"
+        },
+        {
+          "text": "I want to file a claim for property insurance."
+        },
+        {
+          "text": "I want to file a claim for my car which got damaged in an accident"
+        },
+        {
+          "text": "I have to file a claim under medical tourism insurance policy, how to do?"
+        },
+        {
+          "text": "How to make a claim for home insurance?"
+        },
+        {
+          "text": "How to file a claim, wanna know more about it, please tell?"
+        },
+        {
+          "text": "How to file a claim for life insurance?"
+        },
+        {
+          "text": "File a claim for damages caused by natural calamity"
+        }
+      ],
+      "description": "File a claim."
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Agree",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Yes",
+          "synonyms": [
+            "yeah",
+            "okay",
+            "yep",
+            "oh",
+            "so",
+            "sure",
+            "yup",
+            "nope",
+            "hmmm",
+            "hmm"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Closing_conversation",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Thats all",
+          "synonyms": [
+            "Bye",
+            "Good Bye",
+            "Thanks",
+            "Thank you",
+            "No, Thanks"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Disagree",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "No",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-percentage",
+      "values": []
+    },
+    {
+      "entity": "sys-date",
+      "values": []
+    },
+    {
+      "entity": "Greetings",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Hello",
+          "synonyms": [
+            "Hi",
+            "Hey",
+            "How may I help you?",
+            "Good Morning",
+            "Good Evening",
+            "Have a good day",
+            "Good Night",
+            "Good Afternoon"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": []
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    },
+    "from-sample": true
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "text": {
+          "values": [
+            "Please drop an email to the admin.",
+            "Can you reword your statement? I'm not understanding.",
+            "I didn't get your meaning."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "conditions": "anything_else",
+      "digress_in": "does_not_return",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_10_1593011998669",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "change policy",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "If you have life insurance, it's a good idea to regularly review the cover to make sure it’s right for you and your family circumstances. If you review your cover and find it lacking, you can either ask your current insurer to increase the scope of your protection, or cancel your policy and shop around for another."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "1. When you want to port your health insurance policy, you need to approach the new health insurer at least 45-60 days before the expiry of your existing health insurance policy. Once you are there, you need to fill a proposal form for portability, details of previous year policy copies and then apply for portability.\n\n2. As the policyholder of your life insurance policy, you are in control of your life insurance policy choices. Neither beneficiaries nor life insurance policies can be changed without your consent. The only exception to this may be if the beneficiary on your life insurance policy is irrevocable."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Insurance_Change_Policy",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1593411641833",
+      "previous_sibling": "node_9_1593024405880"
+    },
+    {
+      "type": "standard",
+      "title": "claim",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You need the following document for life insurance claim:\nThe death certificate.\nOriginal policy documents.\nID proof of the beneficiary.\nAge proof of insurer.\nDischarge form (executed and witnessed)\nMedical certificate (as proof of the cause of death)\nPolice FIR (in case of unnatural death)\n\nFor health insurance you need the following\nInsurance company's claim form, duly filled and signed by you\nDischarge card\nWritten consultation from the doctor with receipts\nYour hospital bills, which have to be stamped and signed by the hospital authorities\nX-ray films and other test results such as blood test, urine test etc.\nMedicine bills\nOther relevant documents relating to the cause of treatment"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Insurance_File_Claim",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1595675321529",
+      "previous_sibling": "node_9_1595673276300"
+    },
+    {
+      "type": "standard",
+      "title": "Greeting Node",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello there! How may I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greetings || #General_Greetings",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1593011366503",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "file claim",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "To claim your insurance please fill up the claim form provided by your insurance provider along with a copy of you policy document and supporting documents.\n\nFor updating health insurance policyholders need to fill up prescribed reimbursement claim forms. Some sections need to be filled by the hospital and signed by the doctor who treated the patient. The form can be downloaded from the insurer or TPA's website.\n\nIf you have recently submitted a claim for your insurance policy or other policies, you can check its status on this check claim status link. On the web page, enter your Intimation number and your ID Card number, and click on 'Get Claim Status'."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Insurance_File_Claim || #Insurance_Update_Existing_Claim || #Insurance_View_Claim_Status",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1595676382090",
+      "previous_sibling": "node_1_1595675321529"
+    },
+    {
+      "type": "standard",
+      "title": "view policy",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please log in to your insurance provider's website and search with your policy id.  You can also go through your policy document. Please wait till you receive policy document."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Insurance_View_Policy",
+      "dialog_node": "node_9_1595673276300",
+      "previous_sibling": "node_3_1593411641833"
+    },
+    {
+      "type": "standard",
+      "title": "Thank You",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Have a good day ahead"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "@Closing_conversation",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_10_1593011998669",
+      "previous_sibling": "node_2_1595676382090"
+    },
+    {
+      "type": "standard",
+      "title": "Insurance beneficiary",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Beneficiary for your life insurance policy is the individual who will receive the death benefit in the event of your death. You're not limited to just one person. A policy can have more than one beneficiary. A policy's primary beneficiary is the first person who will receive the benefits of that policy when you die. Call at the customer care helpline of your insurance provider to add beneficiary. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "conditions": "#Insurance_Add_Beneficiary",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1593026624341",
+      "previous_sibling": "node_3_1593011366503"
+    },
+    {
+      "type": "standard",
+      "title": "Cancel Policy",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "If you feel the policy is not relevant to you please call  or email your insurance service provider with your policy number requesting to guide you through the procedure of cancellation. Please go through the policy document carefully. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Insurance_Cancel_Policy",
+      "dialog_node": "node_9_1593024405880",
+      "previous_sibling": "node_7_1593026624341"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. I am Insurance bot. I can help you with your queries on insurance."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Covid Detection",
+  "language": "en",
+  "description": "This chatbot interacts with users and  helps to identify if the User is Covid-19 Infected and how severe his/her condition is"
+}
