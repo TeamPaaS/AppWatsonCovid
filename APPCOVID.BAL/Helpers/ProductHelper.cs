@@ -27,15 +27,17 @@ namespace APPCOVID.BAL.Helpers
 
         public IList<ProductViewModel> GetAll(int stage)
         {
-            List<ProductDto> activeproducts = new List<ProductDto>();
+            List<ProductDto> activeProducts = new List<ProductDto>();
             List<ProductDto> products = _productManager.GetProductData().Where(t=>t.STAGE==stage).ToList();
-            List<int> activeProductIds = _transactionHelper.GetAll()
-                .Where(t => string.Equals(t.STATUS, "active", System.StringComparison.CurrentCultureIgnoreCase))
-                .Select(t => t.PRODUCTID).ToList();
-            foreach (int id in activeProductIds) {
-                activeproducts.Add(products.Where(t => t.PRODUCTID == id).FirstOrDefault());
-            }            
-            return ViewMapper(activeproducts);
+            if (!products.Any()) return ViewMapper(activeProducts);
+            {
+                List<int> activeProductIds = _transactionHelper.GetAll()
+                    .Where(t => string.Equals(t.STATUS, "active", System.StringComparison.CurrentCultureIgnoreCase))
+                    .Select(t => t.PRODUCTID).ToList();
+                activeProducts.AddRange(activeProductIds.Select(id => products.FirstOrDefault(t => t.PRODUCTID == id)));
+            }
+
+            return ViewMapper(activeProducts);
         }
 
         public ProductViewModel GetAllById(int pid)
