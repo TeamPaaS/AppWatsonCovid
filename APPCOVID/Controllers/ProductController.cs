@@ -10,6 +10,7 @@ namespace APPCOVID.Controllers
 {
     public class ProductController : CovidController
     {
+        
         // GET: Product
         public ActionResult Index()
         {

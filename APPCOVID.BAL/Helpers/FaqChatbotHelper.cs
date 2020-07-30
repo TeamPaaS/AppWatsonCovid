@@ -13,7 +13,7 @@ namespace APPCOVID.BAL.Helpers
         private const string API_KEY = "lKnLZps8EorCtKpwGexlYzr1CwQOfze2dZsNHStiXufv";
         private string VERSION_DATE = DateTime.Now.ToString("yyyy-mm-dd");
         private const string SERVICE_URL = "https://api.eu-gb.assistant.watson.cloud.ibm.com/instances/54dfc500-aa8a-4e48-ad61-6966509bfa86";                                                                                                       
-        private const string WORKSPACE_ID_COVID_FAQ = "3f0fbb4a-01a0-40f6-8a70-fea314e687fc";
+        private const string WORKSPACE_ID_COVID_FAQ = "574ac426-9f6d-4c10-8538-2d1304862ce6";
 
         #endregion
         //public static CovidChatbotHelper _getInstance { get; set; }

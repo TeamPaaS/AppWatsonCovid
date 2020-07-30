@@ -9,18 +9,20 @@ namespace APPCOVID.BAL.Helpers
 {
     public class ProductHelper
     {
-        private ProductManager _productManager;
-        private TransactionHelper _transactionHelper;
+        private readonly ProductManager _productManager;
+        private readonly TransactionHelper _transactionHelper;
         public ProductHelper()
         {
             _productManager = new ProductManager();
             _transactionHelper = new TransactionHelper();
+            //UpdateTransaction();
+
         }
 
         public IList<ProductViewModel> GetAll()
         {
             List<ProductDto> products = _productManager.GetProductData();
-            return viewMapper(products);
+            return ViewMapper(products);
         }
 
         public IList<ProductViewModel> GetAll(int stage)
@@ -33,7 +35,7 @@ namespace APPCOVID.BAL.Helpers
             foreach (int id in activeProductIds) {
                 activeproducts.Add(products.Where(t => t.PRODUCTID == id).FirstOrDefault());
             }            
-            return viewMapper(activeproducts);
+            return ViewMapper(activeproducts);
         }
 
         public ProductViewModel GetAllById(int pid)
@@ -53,9 +55,22 @@ namespace APPCOVID.BAL.Helpers
             return _productManager.UpdateInsuranceProduct(product);
         }
 
-        public IList<ProductViewModel> viewMapper(List<ProductDto> products)
+        public IList<ProductViewModel> ViewMapper(List<ProductDto> products)
         {
             return products.Select(t => t.ConvertTo<ProductViewModel>()).AsEnumerable().ToList();
+        }
+
+        private void UpdateTransaction() {
+            var transactions = _transactionHelper.GetAll();
+            foreach (var itm in transactions) {
+                DateTime dt;
+                DateTime.TryParse(itm.VALIDUPTODATE, out dt);
+                if (DateTime.Now > dt) {
+                    TransactionViewModel transaction = itm;
+                    transaction.STATUS = "InActive";
+                    _transactionHelper.UpdateTransaction(transaction);
+                }
+            }
         }
     }
 }

@@ -6,13 +6,16 @@ using IBM.Watson.Assistant.v1.Model;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace APPCOVID.Controllers
 {
     public class ChatbotController : CovidController
     {
         private ConversationHelper _conversationHelper;
-        public ChatbotController() {
+        public ChatbotController()
+        {
             _conversationHelper = new ConversationHelper();
         }
         [HttpGet]
@@ -27,7 +30,8 @@ namespace APPCOVID.Controllers
         public IActionResult SendFaqMessage(UserQueryModel userQueryModel)
         {
             Authorize();
-            if (userQueryModel.UserQuery.ToLower() == "noq0") {
+            if (userQueryModel.UserQuery.ToLower() == "noq0")
+            {
                 return Ok("100");
             }
             ChatViewModel chatViewModel = new ChatViewModel();
@@ -38,14 +42,14 @@ namespace APPCOVID.Controllers
             #region Store Conversation
             if (HttpContext.Session.GetObject("conversationCurrent") != null)
             {
-                string testHist = !string.IsNullOrEmpty(HttpContext.Session.GetObject("conversationCurrent").ToString()) 
-                    ? HttpContext.Session.GetObject("conversationCurrent").ToString() 
+                string testHist = !string.IsNullOrEmpty(HttpContext.Session.GetObject("conversationCurrent").ToString())
+                    ? HttpContext.Session.GetObject("conversationCurrent").ToString()
                     : string.Empty;
                 testHist = $"{testHist}-{userQueryModel.UserQuery}";
                 HttpContext.Session.SetObject("conversationCurrent", testHist.ToString());
                 if (userQueryModel.UserQuery.ToLower() == "noq10" || userQueryModel.UserQuery.ToLower() == "yesq10")
                 {
-                   
+
                     bool createStatus = _conversationHelper.CreateConversation(new ConversationViewModel
                     {
                         TYPE = "OST",
@@ -53,7 +57,7 @@ namespace APPCOVID.Controllers
                         USERID = CurrentUserId,
                         MESSAGE = testHist
                     });
-                    return createStatus ? Ok("100"):Ok("999");
+                    return createStatus ? Ok("100") : Ok("999");
                 }
             }
             #endregion
@@ -165,7 +169,21 @@ namespace APPCOVID.Controllers
             var conversation = new List<ConversatioMessage>();
             conversation.Add(new ConversatioMessage { Message = userQueryModel.UserQuery, SendBy = "user" });
             OutputData response = new FaqChatbotHelper().MessageToFaqCovid19Bot(userQueryModel.UserQuery);
-            conversation.Add(new ConversatioMessage { SendBy = "bot", Message = response.Text.Count > 0 ? response.Text[0] : "" });
+            StringBuilder stringBuilder = new StringBuilder();
+            if (response.Text.Count > 0)
+            {
+                foreach (var t in response.Text.Where(t => t != ""))
+                {
+                    stringBuilder.Append($@"{t.Replace(@"\n","|")}|");
+                }
+            }
+
+            var messages = stringBuilder.ToString();
+            conversation.Add(new ConversatioMessage
+            {
+                SendBy = "bot",
+                Message = messages
+            });
             chatViewModel.ChatHistory = conversation;
             return Ok(chatViewModel);
         }

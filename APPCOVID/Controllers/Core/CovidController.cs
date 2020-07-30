@@ -20,59 +20,86 @@ namespace APPCOVID.Controllers.Core
 
         public void Authorize()
         {
-            _accontHelper = AccountHelper._getInstance;
-            string userId = HttpContext.Session.GetObject("coviduserid");
-            if (string.IsNullOrEmpty(userId))
+            try
             {
-                RedirectToActionPermanent("Logout", "Account");
+                _accontHelper = AccountHelper._getInstance;
+                string userId = HttpContext.Session.GetObject("coviduserid");
+                if (string.IsNullOrEmpty(userId))
+                {
+                    ReturnToLogout();
+                }
+
+                CurrentUserId = Convert.ToInt32(userId);
+                int roleId = _accontHelper.GetRoleByUserid(Convert.ToInt32(userId));
+                if (roleId < 1)
+                {
+                    ReturnToLogout();
+                }
+
+                if (roleId == 1)
+                {
+                    IsUserInAdminRole = true;
+                }
+
+                ViewBag.roleId = roleId;
+                UserInformationViewModel userInfo = _accontHelper.UserDataByUserId(Convert.ToInt32(userId));
+                ViewBag.fullName = string.IsNullOrEmpty(userInfo.NAME) ? "Unknown" : userInfo.NAME;
             }
-            CurrentUserId = Convert.ToInt32(userId);
-            int roleId = _accontHelper.GetRoleByUserid(Convert.ToInt32(userId));
-            if (roleId < 1)
+            catch
             {
-                RedirectToActionPermanent("Logout", "Account");
+                ReturnToLogout();
             }
-            if (roleId == 1) {
-                IsUserInAdminRole = true;
-            }
-            ViewBag.roleId = roleId;
-            UserInformationViewModel userInfo = _accontHelper.UserDataByUserId(Convert.ToInt32(userId));
-            ViewBag.fullName = string.IsNullOrEmpty(userInfo.NAME) ? "Unknown" : userInfo.NAME;
         }
 
         public void Authorize(string role)
         {
-            _accontHelper = AccountHelper._getInstance;
-            string userId = HttpContext.Session.GetObject("coviduserid");
-            if (string.IsNullOrEmpty(userId))
+            try
             {
-                RedirectToActionPermanent("Logout", "Account");
+                _accontHelper = AccountHelper._getInstance;
+                string userId = HttpContext.Session.GetObject("coviduserid");
+                if (string.IsNullOrEmpty(userId))
+                {
+                    ReturnToLogout();
+                }
+
+                CurrentUserId = Convert.ToInt32(userId);
+                int roleId = _accontHelper.GetRoleByUserid(Convert.ToInt32(userId));
+                if (roleId < 1)
+                {
+                    ReturnToLogout();
+                }
+                else if (role.ToLower() == "admin" && roleId != 1)
+                {
+                    ReturnToLogout();
+                }
+                else if (role.ToLower() == "customer" && roleId != 2)
+                {
+                    ReturnToLogout();
+                }
+                else if (role.ToLower() == "citizen" && roleId != 3)
+                {
+                    
+                }
+
+                if (roleId == 1)
+                {
+                    IsUserInAdminRole = true;
+                }
+
+                ViewBag.roleId = roleId;
+                UserInformationViewModel userInfo = _accontHelper.UserDataByUserId(Convert.ToInt32(userId));
+                ViewBag.fullName = string.IsNullOrEmpty(userInfo.NAME) ? "Unknown" : userInfo.NAME;
             }
-            CurrentUserId = Convert.ToInt32(userId);
-            int roleId = _accontHelper.GetRoleByUserid(Convert.ToInt32(userId));
-            if (roleId < 1)
+            catch
             {
-                RedirectToActionPermanent("Logout", "Account");
+                ReturnToLogout();
             }
-            else if (role.ToLower() == "admin" && roleId!=1)
-            {
-                RedirectToActionPermanent("Logout", "Account");
-            }
-            else if (role.ToLower() == "customer" && roleId != 2)
-            {
-                RedirectToActionPermanent("Logout", "Account");
-            }
-            else if (role.ToLower() == "citizen" && roleId != 3)
-            {
-                RedirectToActionPermanent("Logout", "Account");
-            }
-            if (roleId == 1)
-            {
-                IsUserInAdminRole = true;
-            }
-            ViewBag.roleId = roleId;
-            UserInformationViewModel userInfo = _accontHelper.UserDataByUserId(Convert.ToInt32(userId));
-            ViewBag.fullName = string.IsNullOrEmpty(userInfo.NAME) ? "Unknown" : userInfo.NAME;
+        }
+
+        public IActionResult ReturnToLogout()
+        {
+            return RedirectToAction("Logout", "Account");
+
         }
     }
 }

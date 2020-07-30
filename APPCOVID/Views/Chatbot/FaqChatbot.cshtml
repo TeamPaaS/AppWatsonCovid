@@ -29,7 +29,7 @@
                 <div class="media mb-3">
                     <div class="media-body mr-3">
                         <div class="bg-light rounded py-2 px-3 mb-2">
-                            <p class="text-small mb-0 text-muted">Hi @ViewBag.fullName, how may I help you?</p>
+                            <p class="text-small mb-0 text-muted">Hi User, how may I help you?</p>
                         </div>
                         <p class="small text-muted">@DateTime.Now.ToString("dd-MM-yyyy") | @DateTime.Now.ToString("hh:mm:ss")</p>
                     </div>
@@ -53,7 +53,7 @@
                 <div class="input-group">
                     <input id="txtChatMsg" type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light">
                     <div class="input-group-append">
-                        <a href="javascript::void(0)" id="button-addon2" class="btn btn-link" onclick="AskChatbot('txtChatMsg','chatContainer','faq')"> <i class="fa fa-paper-plane"></i></a>
+                        <a href="javascript:void(0)" id="button-addon2" class="btn btn-link" onclick="AskChatbotFAQ2('txtChatMsg','chatContainer','faq')"> <i class="fa fa-paper-plane"></i></a>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@
     <script type="text/javascript">
         $(document).on('keypress', function (e) {
             if (e.which == 13) {
-                AskChatbot('txtChatMsg', 'chatContainer', 'faq');
+                AskChatbotFAQ2('txtChatMsg', 'chatContainer', 'faq');
             }
         });
     </script>

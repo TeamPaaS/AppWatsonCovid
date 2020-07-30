@@ -5,7 +5,7 @@
     data: {}
 };
 
-function AskChatbot(txtboxId, objectContainer, serviceType) {
+function AskChatbotFAQ2(txtboxId, objectContainer, serviceType) {
     var settings = "";
     if (serviceType.toLowerCase() === "faq") {
         settings = chatbotFaqSettings;
@@ -14,7 +14,7 @@ function AskChatbot(txtboxId, objectContainer, serviceType) {
     if (contentData !== null && contentData !== "" && contentData !== undefined) {
         var model = { UserQuery: contentData };
         settings.data = model;
-        prepareUserChatTemplate(contentData, objectContainer);
+        prepareUserChatTemplateFAQ2(contentData, objectContainer);
         var container = $("#" + objectContainer).html();
         $("#loader").css('display', 'block');
         $.ajax(settings).done(function (response) {
@@ -25,7 +25,7 @@ function AskChatbot(txtboxId, objectContainer, serviceType) {
                     //    container = container + prepareUserChatTemplate(valu.message);                   
                     //}
                     if (valu.sendBy === "bot") {
-                        container = container + prepareBotChatTemplate(valu.message);
+                        container = container + prepareBotChatTemplateFAQ2(valu.message);
                     }
                 });
                 $("#" + objectContainer).html(container);
@@ -36,7 +36,7 @@ function AskChatbot(txtboxId, objectContainer, serviceType) {
     }
 }
 
-function prepareUserChatTemplate(conversationMessage, objectContainer) {
+function prepareUserChatTemplateFAQ2(conversationMessage, objectContainer) {
     var today = new Date();
     var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
@@ -52,13 +52,14 @@ function prepareUserChatTemplate(conversationMessage, objectContainer) {
     $("#" + objectContainer).html(container);
 }
 
-function prepareBotChatTemplate(conversationMessage) {
+function prepareBotChatTemplateFAQ2(conversationMessage) {
     var today = new Date();
     var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var messages = conversationMessage.replace("|", "<br/>");
     var template = "<div class='media mb-3'>" +
         "<div class='media-body mr-3'> <div class='bg-light rounded py-2 px-3 mb-2'> <p class='text-small mb-0 text-muted'>" +
-        conversationMessage +
+        messages +
         "</p > </div > <p class='small text-muted'>" +
         date + " | " + time +
         "</p > </div >" + "<img src='/img/bot.jpg' alt='user' width='50' class='rounded-circle'> "
