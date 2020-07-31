@@ -34,7 +34,10 @@ namespace APPCOVID.BAL.Helpers
                 List<int> activeProductIds = _transactionHelper.GetAll()
                     .Where(t => string.Equals(t.STATUS, "active", System.StringComparison.CurrentCultureIgnoreCase))
                     .Select(t => t.PRODUCTID).ToList();
-                activeProducts.AddRange(activeProductIds.Select(id => products.FirstOrDefault(t => t.PRODUCTID == id)));
+                foreach (var tranProdId in activeProductIds)
+                {
+                    activeProducts.AddRange(products.Where(prod => tranProdId == prod.PRODUCTID));
+                }
             }
 
             return ViewMapper(activeProducts);

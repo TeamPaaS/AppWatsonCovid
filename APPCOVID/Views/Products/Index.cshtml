@@ -3,125 +3,146 @@
 @using Microsoft.CodeAnalysis.CSharp.Syntax
 @model IEnumerable<APPCOVID.Entity.ViewModels.ProductViewModel>
 @{int roleId = ViewBag.roleId;}
+
+
+
+@if (roleId == 2)
+{
+    @Html.ActionLink("Create New Product", "Create", "Product")
     <div class="row">
-
-        @if (roleId == 2){
-        @Html.ActionLink("Create New Product", "Create", "Product")
-
-        <table class="table table-responsive table-bordered">
-            <thead>
-                <tr>
-
-                    <th>
-                        Type of Product
-                    </th>
-
-                    <th>
-                        Product for Infection-Stage
-                    </th>
-                    <th>
-                        About Product
-                    </th>
-                    <th>
-                        Product Short Description
-                    </th>
-                    <th>
-                        Product Pics
-                    </th>
-                    <th>
-                        Product Link
-                    </th>
-                    <th>
-                        Product Status
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                <tr>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PRODUCTTYPE)
-                    </td>
-
-                    <td>
-                        @Html.DisplayFor(modelItem => item.STAGE)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DESCRIPTION)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.SHORTDESCRIPTION)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IMAGEURL)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.PRODUCTURL)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.STATUS)
-                    </td>
-
-                    <td>
-                        @Html.ActionLink("View", "Details", new { id = item.PRODUCTID })
-                        @if (roleId == 2)
-                        @Html.ActionLink("Buy", "BuyProduct", new{ id = item.PRODUCTID })
-                        @* @Html.ActionLink("Edit", "Edit", new { id = item.PRODUCTID}) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
-    }
-
-        @if (roleId == 3)
+        @foreach (var item in Model)
         {
-    <div class="col-sm-12">
-        <a asp-controller="Chatbot" asp-action="MedicalChatbot" style="float:right" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm m-2"><i class="fas fa-comments fa-sm text-white-50"></i> Medical Assistant</a>
-        <a asp-controller="Chatbot" asp-action="InsuranceChatbot" style="float:right" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm m-2"><i class="fas fa-comments fa-sm text-white-50"></i> Insurance Assistant</a>
-       
-    </div><br /><hr />
+            string shortDesc = item.SHORTDESCRIPTION.Length > 26 ? item.SHORTDESCRIPTION.Substring(0, 25) : item.SHORTDESCRIPTION;
+            string stageClass = "";
+            if (item.STAGE == 1)
+            {
+                stageClass = "info";
+            }
+            if (item.STAGE == 2)
+            {
+                stageClass = "warning";
+            }
+            if (item.STAGE == 3)
+            {
+                stageClass = "danger";
+            }
+            <div class="col-xl-3 col-md-6 mb-4">
+                @if (item.PRODUCTTYPE.ToLower() == "insurance")
+                {
+                    <div class="card border-primary" style="width: 18rem;">
 
-            List<APPCOVID.Entity.ViewModels.ProductViewModel> vm = (List<APPCOVID.Entity.ViewModels.ProductViewModel>)ViewBag.activeProductsByStage;
+                        <img class="card-img-top" src="@item.IMAGEURL" alt="Card image cap" style="height: 150px">
+                        <div class="card-body">
+                            <span class="badge badge-primary">Insurance</span>
+                            <span class="badge badge-pill badge-@stageClass">Stage: @item.STAGE</span>
+                            <h5 data-toggle="tooltip" title="@item.SHORTDESCRIPTION" class="card-title">@shortDesc </h5>
+                            <p class="card-text"><textarea class="form-control" style="min-width: 100%" rows="5" disabled="disabled" readonly="">@item.DESCRIPTION</textarea></p>
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <a class="btn btn-primary" href="/Product/Details/@item.PRODUCTID">View</a>
+                                @{
+                                    if (item.STATUS.ToLower() == "active")
+                                    {
+                                        <a class="btn btn-success" href="/Product/BuyProduct/@item.PRODUCTID">Buy</a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-dark disabled" href="/Product/BuyProduct/@item.PRODUCTID">In Active</a>
+                                    }
+                                }
+                                <a href="@item.PRODUCTURL" class="btn btn-secondary">Go to Product</a>
+                            </div>
+
+
+                        </div>
+                    </div>
+                }
+                else
+                {
+
+                    <div class="card border-warning" style="width: 18rem;">
+                        <img class="card-img-top" src="@item.IMAGEURL" alt="Card image cap" style="height: 150px">
+                        <div class="card-body">
+                            <span class="badge badge-success">Medical Assistance</span>
+                            <span class="badge badge-pill badge-@stageClass">Stage: @item.STAGE</span>
+                            <h5 data-toggle="tooltip" title="@item.SHORTDESCRIPTION" class="card-title">@shortDesc </h5>
+                            <p class="card-text"><textarea class="form-control" style="min-width: 100%" rows="5" disabled="disabled" readonly="">@item.DESCRIPTION</textarea></p>
+                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <a class="btn btn-primary" href="/Product/Details/@item.PRODUCTID">View</a>
+                                @{
+                                    if (item.STATUS.ToLower() == "active")
+                                    {
+                                        <a class="btn btn-success" href="/Product/BuyProduct/@item.PRODUCTID">Buy</a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-dark disabled" href="/Product/BuyProduct/@item.PRODUCTID">In Active</a>
+                                    }
+                                }
+                                <a href="@item.PRODUCTURL" class="btn btn-secondary">Go to Product</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}
+
+@if (roleId == 3)
+{
+    <div class="row">
+        <div class="col-sm-12">
+            <a asp-controller="Chatbot" asp-action="MedicalChatbot" style="float:right" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm m-2"><i class="fas fa-comments fa-sm text-white-50"></i> Medical Assistant</a>
+            <a asp-controller="Chatbot" asp-action="InsuranceChatbot" style="float:right" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm m-2"><i class="fas fa-comments fa-sm text-white-50"></i> Insurance Assistant</a>
+        </div>
+        <br /><hr />
+
+        @{
+            List<APPCOVID.Entity.ViewModels.ProductViewModel> vm = (List<APPCOVID.Entity.ViewModels.ProductViewModel>) ViewBag.activeProductsByStage;
             if (vm.Any())
             {
                 @foreach (var item in vm)
                 {
-                    <div class="col-sm-3">
-                        @if (item.PRODUCTTYPE.ToLower() == "insurance")
-                        {
-                            <div class="card border-primary" style="width: 18rem;">
+                  
+                    if (!string.IsNullOrEmpty(item.PRODUCTTYPE))
+                    {
+                        string shortDesc = item.SHORTDESCRIPTION.Length > 26 ? item.SHORTDESCRIPTION.Substring(0, 25) : item.SHORTDESCRIPTION;
+                        <div class="col-xl-3 col-md-6 mb-4">
 
-                                <img class="card-img-top" src="@item.IMAGEURL" alt="Card image cap">
-                                <div class="card-body">
-                                    <span class="badge badge-primary">Insurance</span>
-                                    <h5 class="card-title">@item.SHORTDESCRIPTION</h5>
-                                    <p class="card-text">@item.DESCRIPTION</p>
-                                    <a href="@item.PRODUCTURL" class="btn btn-primary">Buy</a>
+                            @if (item.PRODUCTTYPE.ToLower() == "insurance")
+                            {
+                                <div class="card border-primary" style="width: 18rem;">
+
+                                    <img class="card-img-top" src="@item.IMAGEURL" alt="Card image cap" style="height: 150px">
+                                    <div class="card-body">
+                                        <span class="badge badge-primary">Insurance</span>
+                                        <h5 data-toggle="tooltip" title="@item.SHORTDESCRIPTION" class="card-title">@shortDesc</h5>
+                                        <p class="card-text"><textarea class="form-control" style="min-width: 100%" rows="5" disabled="disabled" readonly="">@item.DESCRIPTION</textarea></p>
+                                        <a href="@item.PRODUCTURL" class="btn btn-primary">Buy</a>
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="card border-warning" style="width: 18rem;">
-                                <img class="card-img-top" src="@item.IMAGEURL" alt="Card image cap">
-                                <div class="card-body">
-                                    <span class="badge badge-success">Medical Assistance</span>
-                                    <h5 class="card-title">@item.SHORTDESCRIPTION</h5>
-                                    <p class="card-text">@item.DESCRIPTION</p>
-                                    <a href="@item.PRODUCTURL" class="btn btn-primary">Book</a>
+                            }
+                            @if (item.PRODUCTTYPE.ToLower() == "healthcare")
+                            {
+                                <div class="card border-warning" style="width: 18rem;">
+                                    <img class="card-img-top" src="@item.IMAGEURL" alt="Card image cap" style="height: 150px">
+                                    <div class="card-body">
+                                        <span class="badge badge-success">Medical Assistance</span>
+                                        <h5 data-toggle="tooltip" title="@item.SHORTDESCRIPTION" class="card-title">@shortDesc</h5>
+                                        <p class="card-text"><textarea class="form-control" style="min-width: 100%" rows="5" disabled="disabled" readonly="">@item.DESCRIPTION</textarea></p>
+                                        <a href="@item.PRODUCTURL" class="btn btn-primary">Book</a>
+                                    </div>
                                 </div>
-                            </div>
-                        }
-                    </div>
+                            }
+                        </div>
+                    }
                 }
-            } else
+            }
+            else
             {
                 <div>Sorry!! No Product found.</div>
             }
         }
     </div>
+}
+
