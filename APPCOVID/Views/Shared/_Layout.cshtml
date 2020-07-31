@@ -115,8 +115,8 @@
                     <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <h6 class="collapse-header">Managements:</h6>
-                            <a class="collapse-item" asp-controller="Product" asp-action="Index">Manage Products</a>
-                            @*<a class="collapse-item" href="utilities-border.html">Manage Citizen</a>*@
+                            @*<a class="collapse-item" asp-controller="Product" asp-action="Index">Manage Products</a>
+                              <a class="collapse-item" href="utilities-border.html">Manage Citizen</a>*@
                             <a class="collapse-item" asp-controller="Transaction" asp-action="Index">Manage Transactions</a>
                             <a class="collapse-item" asp-controller="Transaction" asp-action="AllSubscriptionDetails"> Active Subscription</a>
                             @*<a class="collapse-item" href="utilities-other.html">Other</a>*@
@@ -177,6 +177,7 @@
                 </nav>
                 <!-- End of Topbar -->
                 <!-- Begin Page Content -->
+               
                 @{ string crmUrl = "https://ac476ap.adobesandbox.com/webApp/referYourFriend?id=" + ViewBag.UserId;}
                 <div class="container-fluid">
                     <!-- Page Heading -->
@@ -185,7 +186,11 @@
                         
                         
                         <div class="col-sm-6">
-                            <a class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" href="@crmUrl">Refer</a>
+                            @if (roleId == 3)
+                            {
+                                <a class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right" href="@crmUrl">Refer</a>
+                            }
+
                             <a asp-controller="Chatbot" asp-action="FaqChatbot" class="d-sm-inline-block btn btn-sm btn-primary shadow-sm float-right mr-2"><i class="fas fa-comments fa-sm text-white-50"></i> Ask Covid FAQ</a>
 
                         </div>

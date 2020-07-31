@@ -37,7 +37,7 @@ namespace APPCOVID.DAL.DataManagers.Managers
             return _dataManager.GetData(getAllDataQuery);
         }
 
-        public bool CreateInsuranceProduct(ConversationDto conversation)
+        public bool CreateConversation(ConversationDto conversation)
         {
             string prepareQuery = $@"insert into {DalCostants.TABLE_SCHEMA}.{DalCostants.CONVERSATION_TABLE} (TYPE,USERID,MESSAGE,CONVERSDATETIME)
                             values('{conversation.TYPE}', {conversation.USERID}, '{conversation.MESSAGE}', '{conversation.CONVERSDATETIME}')";

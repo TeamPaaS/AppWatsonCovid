@@ -42,7 +42,8 @@ namespace APPCOVID.Controllers
         {
             try
             {
-                new ProductHelper().UpdateProduct(prodModel);
+                if(prodModel.CUSTOMERID>0)
+                    new ProductHelper().UpdateProduct(prodModel);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -79,8 +80,8 @@ namespace APPCOVID.Controllers
                 {
                     productInsurance.STATUS = "Active";
                     productInsurance.CUSTOMERID = Convert.ToInt32(HttpContext.Session.GetObject("coviduserid"));
-
-                    new ProductHelper().CreateProduct(productInsurance);
+                    if(productInsurance.CUSTOMERID>0)
+                         new ProductHelper().CreateProduct(productInsurance);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)

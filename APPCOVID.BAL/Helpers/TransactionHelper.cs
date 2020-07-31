@@ -22,7 +22,7 @@ namespace APPCOVID.BAL.Helpers
         public TransactionViewModel GetAllById(int tid)
         {
             List<TransactionDto> getTransactionInfo = _transactionManager.GetTransactionData();
-            TransactionDto transactionDetails = getTransactionInfo.Where(t => t.PRODUCTID == tid).FirstOrDefault();
+            TransactionDto transactionDetails = getTransactionInfo.Where(t => t.TRANSACTIONID == tid).FirstOrDefault();
             TransactionViewModel transactionInfo = CommonHelper.ConvertTo<TransactionViewModel>(transactionDetails);
             return transactionInfo;
         }

@@ -55,7 +55,8 @@ namespace APPCOVID.Controllers
         {
             try
             {
-                new TransactionHelper().UpdateTransaction(transModel);
+                if(transModel.CUSTOMERID>0)
+                     new TransactionHelper().UpdateTransaction(transModel);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -78,7 +79,7 @@ namespace APPCOVID.Controllers
             try
             {
                 string userId = HttpContext.Session.GetObject("coviduserid");
-
+                
                 if (transaction.SUBSCRIPTIONTYPE=="Monthly")
                 {
                     transaction.VALIDUPTODATE = DateTime.Now.AddMonths(1).ToString("dd-MM-yyyy hh:mm:tt");
@@ -100,8 +101,8 @@ namespace APPCOVID.Controllers
                 transaction.CREATEDDATE = DateTime.Now.ToString("dd-MM-yyyy hh:mm:tt");                
                 transaction.STATUS = "InActive";
 
-
-                new TransactionHelper().CreateTransaction(transaction);
+                if (userId!=null || userId!="" || userId!="Unknown")
+                    new TransactionHelper().CreateTransaction(transaction);
                 return RedirectToAction(nameof(SubscriptionDetails));
             }
             catch (Exception ex)

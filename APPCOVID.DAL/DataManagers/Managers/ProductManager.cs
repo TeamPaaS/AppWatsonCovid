@@ -54,8 +54,10 @@ namespace APPCOVID.DAL.DataManagers.Managers
                                         SHORTDESCRIPTION='{product.SHORTDESCRIPTION}',
                                         IMAGEURL='{product.IMAGEURL}',
                                         PRODUCTURL='{product.PRODUCTURL}',
-                                        STATUS='{product.STATUS}'
-                                   where PRODUCTID="+product.PRODUCTID+"";
+                                        STATUS='{product.STATUS}',
+                                        CUSTOMERID='{product.CUSTOMERID}',
+                                        STAGE='{product.STAGE}'
+                                   where PRODUCTID=" +product.PRODUCTID+"";
             return _dataManager.InsertData(prepareQuery);
         }
 

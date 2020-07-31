@@ -46,7 +46,7 @@ namespace APPCOVID.BAL.Helpers
 
         public bool CreateConversation(ConversationViewModel conversation)
         {
-            return _conversationManager.CreateInsuranceProduct(CommonHelper.ConvertTo<ConversationDto>(conversation));
+            return _conversationManager.CreateConversation(CommonHelper.ConvertTo<ConversationDto>(conversation));
         }
 
         public IList<InfectionSeverityCodesModel> FindInfections(int? userId = null, string convType = null)
