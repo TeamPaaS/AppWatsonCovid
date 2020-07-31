@@ -55,8 +55,7 @@ namespace APPCOVID.Controllers
         {
             try
             {
-                if(transModel.CUSTOMERID>0)
-                     new TransactionHelper().UpdateTransaction(transModel);
+                new TransactionHelper().UpdateTransaction(transModel);
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)

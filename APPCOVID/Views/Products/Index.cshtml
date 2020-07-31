@@ -91,6 +91,10 @@
             {
                 @foreach (var item in vm)
                 {
+                    @if (item.PRODUCTID>0)
+                    {
+
+                    
                     <div class="col-sm-3">
                         @if (item.PRODUCTTYPE.ToLower() == "insurance")
                         {
@@ -117,7 +121,9 @@
                                 </div>
                             </div>
                         }
+                    
                     </div>
+                    }
                 }
             } else
             {
