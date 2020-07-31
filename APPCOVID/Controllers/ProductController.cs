@@ -74,14 +74,16 @@ namespace APPCOVID.Controllers
         [HttpPost]
         public ActionResult Create(ProductViewModel productInsurance)
         {
-            if (productInsurance != null && productInsurance.SHORTDESCRIPTION != "" && productInsurance.PRODUCTURL != "" && productInsurance.DESCRIPTION != "" && productInsurance.IMAGEURL != "")
+            if (productInsurance != null && productInsurance.SHORTDESCRIPTION != "" &&
+                productInsurance.PRODUCTURL != "" && productInsurance.DESCRIPTION != "" &&
+                productInsurance.IMAGEURL != "")
             {
                 try
                 {
                     productInsurance.STATUS = "Active";
                     productInsurance.CUSTOMERID = Convert.ToInt32(HttpContext.Session.GetObject("coviduserid"));
-                    if(productInsurance.CUSTOMERID>0)
-                         new ProductHelper().CreateProduct(productInsurance);
+                    if (productInsurance.CUSTOMERID > 0)
+                        new ProductHelper().CreateProduct(productInsurance);
                     return RedirectToAction(nameof(Index));
                 }
                 catch (Exception ex)

@@ -29,15 +29,15 @@
                                         if(itm.SeverityCode>5 && itm.Answer)
                         {
                     <div class="alert alert-danger" role="alert">
-                        You are affected with: @itm.InfectionDesc
+                        You are affected with @itm.InfectionDesc
                     </div>
                                     }if(itm.SeverityCode>=3 && itm.SeverityCode<=5 && itm.Answer){
                     <div class="alert alert-warning" role="alert">
-                        You are affected with: @itm.InfectionDesc
+                        You are affected with @itm.InfectionDesc
                     </div>
                         }if(itm.SeverityCode<3 && itm.Answer){
                     <div class="alert alert-primary" role="alert">
-                        You are affected with: @itm.InfectionDesc
+                        You are affected with @itm.InfectionDesc
                     </div>
                                         }if(!itm.Answer){
                     <div class="alert alert-success" role="alert">

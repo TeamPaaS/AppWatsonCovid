@@ -52,7 +52,7 @@ function CallService(settings, container) {
                         //}
                         if (valu.sendBy === "bot") {
                             container = container + prepareBotChatTemplate(valu.message, valu.isOption);
-                            window.currentQ = valu.questionNo
+                            window.currentQ = valu.questionNo;
                         }
                     });
                     $("#" + objectContainerElement).html(container);

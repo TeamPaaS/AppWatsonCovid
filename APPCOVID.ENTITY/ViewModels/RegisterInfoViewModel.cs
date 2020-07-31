@@ -8,6 +8,8 @@ namespace APPCOVID.Entity.ViewModels
         public string FullName { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "*")]
+        [StringLength(10, ErrorMessage = "Phone length must be 10 digit.")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Only number allowed")]
         public string Phone { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "*")]
