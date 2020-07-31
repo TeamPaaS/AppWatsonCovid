@@ -35,7 +35,7 @@ namespace APPCOVID.Controllers
                 int affectedStage = 0;
                 result = infections.Where(t => t.Answer).Sum(t => t.SeverityCode);
                 HttpContext.Session.SetObject("OST_Result", result.ToString());
-                ViewBag.testResultDetails = result > 0 ? infections : null;
+                ViewBag.testResultDetails =  infections.Any() ? infections : null;
                 if (result > 15 && result <= 30)
                 {
                     affectedStage = 3;
